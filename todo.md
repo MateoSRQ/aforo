@@ -1,0 +1,9 @@
+- Add loader end in case of error / retry
+- Add column selector
+- Add three tabs for cube
+- Add cubes
+- Add items for totals / months
+- Add relevant logic / graphs
+- Add time selection?
+- Add comparisons
+- Add accesss
