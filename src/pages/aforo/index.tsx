@@ -112,31 +112,35 @@ export default () => {
 
     let desercion = [.15, .12, .12, .10, .05, .04, .03, .02, .02, .01]
     let semestre = .43
+    let crecimiento = .05
 
 
     let data = []
 
     let _initial = initial
 
+
     for (let i=0; i<5; i++) {
-        let _row: any = {}
-        for (let j=1; j<=10; j++) {
-            if (j == 1) {
-                let n = i+j
-                console.log('n:' + n + ' ' + (n).toString().padStart(2, '0'))
-                _row[(n).toString().padStart(2, '0')] = (j%2)?Math.round(_initial):Math.round(_initial*.43)
-            }
-            else {
-                let n = i+j
-                console.log('n:' + n + ' ' + (n).toString().padStart(2, '0'))
-                _row[(n).toString().padStart(2, '0')] = Math.round(_row[(j-1+i).toString().padStart(2, '0')]*(1 - desercion[j-1+i]))
-            }
+        let _row: any = {
+            0: 0, 1: 0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:0, 12:0
         }
-        data.push(_row);
+        for (let j = 0; j <= 10; j++) {
+            if (j == i) {
+                _row[j] = Math.round(_initial*((j%2)?semestre:1)*(1 + crecimiento*Math.floor(j/2)))
+            }
+            if (j > i) {
+
+                _row[j] = Math.round(_row[j-1]*((1 - desercion[j - i - 1])))
+            }
+
+        }
+        data.push(_row)
+    }
+    for (let i = 0; i < data.length; i++) {
+        console.log(Object.entries(data[i]).sort().reduce( (o,[k,v]) => (o[k]=v,o), {} ));
     }
 
-    console.log('data')
-    console.log(data)
+
 
  
     return (
