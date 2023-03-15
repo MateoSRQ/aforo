@@ -80,3 +80,7 @@
     bottom: 40px;
     right: 60px;
 }
+
+.component :global(.ant-table-cell) {
+    padding: 4px !important;
+}
