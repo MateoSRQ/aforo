@@ -8,6 +8,7 @@
     justify-items: center;
     flex-flow: column;
     background-color: darkgrey;
+    
 }
 
 
@@ -30,6 +31,7 @@
     width: calc(100% - 40px);
     height: calc(100% - 40px);
     background-color: white;
+    padding: 20px;
 }
 
 .tableContainer {

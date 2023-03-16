@@ -3,7 +3,7 @@ import style from './index.module.css'
 import { Col, InputNumber, Row, Slider, Space } from 'antd';
 import '@fontsource/archivo'
 import '@fontsource/fragment-mono'
-import {ConfigProvider, Spin, Table, Tabs, List, Radio, Form, Input, Select, Switch} from 'antd';
+import {ConfigProvider, Spin, Table, Tabs, List, Radio, Form, Input, Select, Switch, Divider} from 'antd';
 
 
 import {Button, Modal} from 'antd';
@@ -174,7 +174,10 @@ export default (props: any) => {
 
                 <div className={style.container}>
                     <Row>
-                        <Col span={10}>
+                    <Col span={2} style={{color: 'black'}}>
+                            # Ingresantes iniciales
+                        </Col>
+                        <Col span={8}>
                             <Slider
                                 min={1}
                                 max={1000}
@@ -191,7 +194,10 @@ export default (props: any) => {
                                 onChange={(value: number) => { setInitial(value)}}
                             />
                         </Col>
-                        <Col span={10}>
+                        <Col span={2} style={{color: 'black'}}>
+                            % de crecimiento anual
+                        </Col>
+                        <Col span={8}>
                             <Slider
                                 min={0.05}
                                 max={1.00}
@@ -211,7 +217,10 @@ export default (props: any) => {
                         </Col>
                     </Row>
                     <Row>
-                        <Col span={10}>
+                        <Col span={2} style={{color: 'black'}}>
+                                # Número de ciclos
+                        </Col>
+                        <Col span={8}>
                             <Slider
                                 min={1}
                                 max={12}
@@ -229,13 +238,16 @@ export default (props: any) => {
 
                             />
                         </Col>
-                        <Col span={10}>
+                        <Col span={2} style={{color: 'black'}}>
+                                % Semestre final
+                        </Col>
+                        <Col span={8}>
                             <Slider
                                 min={0.05}
                                 max={1.00}
                                 step={0.01}
-                                onChange={(value: number) => { setCrecimiento(value)}}
-                                value={typeof crecimiento  === 'number' ?crecimiento : 0}
+                                onChange={(value: number) => { setSemestre(value)}}
+                                value={typeof semestre  === 'number' ?semestre : 0}
                             />
                         </Col>
                         <Col span={2}>
@@ -243,12 +255,12 @@ export default (props: any) => {
                                 min={0.05}
                                 max={1.00}
                                 style={{ margin: '0 16px' }}
-                                value={typeof crecimiento  === 'number' ?crecimiento : 0}
-                                onChange={(value: number) => { setCrecimiento(value)}}
+                                onChange={(value: number) => { setSemestre(value)}}
+                                value={typeof semestre  === 'number' ?semestre : 0}
                             />
                         </Col>
                     </Row>
-
+                    <Divider />
                     <Table
                         columns={columns}
                         dataSource={data}
@@ -259,267 +271,3 @@ export default (props: any) => {
         </ConfigProvider>
     )
 }
-
-/*
-const columns = [
-    {
-        title: 'I',
-        dataIndex: 'ciclo0',
-        key: 'ciclo0',
-
-    },
-    {
-        title: 'II',
-        dataIndex: 'ciclo1',
-        key: 'ciclo1',
-        render(text: any, record: any) {
-            return {
-                props: {
-                    style: {
-                        width: '80px',
-                        textAlign: 'center',
-                        lineHeight: '20px',
-                        padding: '2px',
-                        background: colors[record.ciclo1.index % 12]
-                    },
-                },
-                children: <div>{record.ciclo1.data}</div>,
-            };
-        }
-    },
-    {
-        title: 'III',
-        dataIndex: 'ciclo2',
-        key: 'ciclo2',
-        render(text: any, record: any) {
-            return {
-                props: {
-                    style: {
-                        width: '80px',
-                        textAlign: 'center',
-                        lineHeight: '20px',
-                        padding: '2px',
-                        background: colors[record.ciclo2.index % 12]
-                    },
-                },
-                children: <div>{record.ciclo2.data}</div>,
-            };
-        }
-    },
-    {
-        title: 'IV',
-        dataIndex: 'ciclo3',
-        key: 'ciclo3',
-        render(text: any, record: any) {
-            return {
-                props: {
-                    style: {
-                        width: '80px',
-                        textAlign: 'center',
-                        lineHeight: '20px',
-                        padding: '2px',
-                        background: colors[record.ciclo3.index % 12]
-                    },
-                },
-                children: <div>{record.ciclo3.data}</div>,
-            };
-        }
-    },
-    {
-        title: 'V',
-        dataIndex: 'ciclo4',
-        key: 'ciclo4',
-        render(text: any, record: any) {
-            return {
-                props: {
-                    style: {
-                        width: '80px',
-                        textAlign: 'center',
-                        lineHeight: '20px',
-                        padding: '2px',
-                        background: colors[record.ciclo4.index % 12]
-                    },
-                },
-                children: <div>{record.ciclo4.data}</div>,
-            };
-        }
-    },
-    {
-        title: 'VI',
-        dataIndex: 'ciclo5',
-        key: 'ciclo5',
-        render(text: any, record: any) {
-            return {
-                props: {
-                    style: {
-                        width: '80px',
-                        textAlign: 'center',
-                        lineHeight: '20px',
-                        padding: '2px',
-                        background: colors[record.ciclo5.index % 12]
-                    },
-                },
-                children: <div>{record.ciclo5.data}</div>,
-            };
-        }
-    },
-    {
-        title: 'VII',
-        dataIndex: 'ciclo6',
-        key: 'ciclo6',
-        render(text: any, record: any) {
-            return {
-                props: {
-                    style: {
-                        width: '80px',
-                        textAlign: 'center',
-                        lineHeight: '20px',
-                        padding: '2px',
-                        background: colors[record.ciclo6.index % 12]
-                    },
-                },
-                children: <div>{record.ciclo6.data}</div>,
-            };
-        }
-    },
-    {
-        title: 'VIII',
-        dataIndex: 'ciclo7',
-        key: 'ciclo7',
-        render(text: any, record: any) {
-            return {
-                props: {
-                    style: {
-                        width: '80px',
-                        textAlign: 'center',
-                        lineHeight: '20px',
-                        padding: '2px',
-                        background: colors[record.ciclo7.index % 12]
-                    },
-                },
-                children: <div>{record.ciclo7.data}</div>,
-            };
-        }
-    },
-    {
-        title: 'IX',
-        dataIndex: 'ciclo8',
-        key: 'ciclo8',
-        render(text: any, record: any) {
-            return {
-                props: {
-                    style: {
-                        width: '80px',
-                        textAlign: 'center',
-                        lineHeight: '20px',
-                        padding: '2px',
-                        background: colors[record.ciclo8.index % 12]
-                    },
-                },
-                children: <div>{record.ciclo8.data}</div>,
-            };
-        }
-    },
-    {
-        title: 'X',
-        dataIndex: 'ciclo9',
-        key: 'ciclo9',
-        render(text: any, record: any) {
-            return {
-                props: {
-                    style: {
-                        width: '80px',
-                        textAlign: 'center',
-                        lineHeight: '20px',
-                        padding: '2px',
-                        background: colors[record.ciclo9.index % 12]
-                    },
-                },
-                children: <div>{record.ciclo9.data}</div>,
-            };
-        }
-    },
-    {
-        title: 'XI',
-        dataIndex: 'ciclo10',
-        key: 'ciclo10',
-        render(text: any, record: any) {
-            return {
-                props: {
-                    style: {
-                        width: '80px',
-                        textAlign: 'center',
-                        lineHeight: '20px',
-                        padding: '2px',
-                        background: colors[record.ciclo10.index % 12]
-                    },
-                },
-                children: <div>{record.ciclo10.data}</div>,
-            };
-        }
-    },
-    {
-        title: 'XII',
-        dataIndex: 'ciclo11',
-        key: 'ciclo11',
-        render(text: any, record: any) {
-            return {
-                props: {
-                    style: {
-                        width: '80px',
-                        textAlign: 'center',
-                        lineHeight: '20px',
-                        padding: '2px',
-                        background: colors[record.ciclo11.index % 12]
-                    },
-                },
-                children: <div>{record.ciclo11.data}</div>,
-            };
-        }
-    },
-    {
-        title: 'A',
-        dataIndex: 'ciclo12',
-        key: 'ciclo12',
-        render(text: any, record: any) {
-            return {
-                props: {
-                    style: {
-                        width: '80px',
-                        textAlign: 'center',
-                        lineHeight: '20px',
-                        padding: '2px',
-
-                    },
-                },
-                children: <div>{record.ciclo12.data}</div>,
-            };
-        }
-    },
-    {
-        title: 'Total',
-        dataIndex: 'total',
-        key: 'total',
-        render(text: any, record: any) {
-            return {
-                props: {
-                    style: {
-                        width: '80px',
-                        textAlign: 'center',
-                        lineHeight: '20px',
-                        padding: '2px',
-                    },
-                },
-                children: <div>{record.total.data}</div>,
-            };
-        }
-    },
-];
-
-
-
-
-let semestre = .43
-let crecimiento = .05
-let rl = 12
-*/
