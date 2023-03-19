@@ -8,26 +8,16 @@
     justify-items: center;
     flex-flow: column;
     background-color: darkgrey;
-    
+    flex-wrap: wrap;
 }
-
-
-.menuContainer {
-    width: calc(100% - 40px);
-    height: calc(70px);
-    color: #066ec1;
-    line-height: 70px;
-    margin-left: 40px;
-    vertical-align: bottom;
-    font-size: 1.75rem;
-    font-weight: 600;
-    letter-spacing: -.5px;
-    text-transform: uppercase;
-    margin-top: 20px;
-}
-
 
 .container {
+    width: calc(100% - 40px);
+    min-height: calc(250px);
+    background-color: white;
+}
+
+.inner {
     width: calc(100% - 40px);
     height: calc(100% - 40px);
     background-color: white;
@@ -85,19 +75,4 @@
 
 .component :global(.ant-table-cell) {
     padding: 4px !important;
-}
-
-:global(.editable-cell) {
-    position: relative;
-}
-
-:global(.editable-cell-value-wrap) {
-    padding: 5px 12px;
-    cursor: pointer;
-}
-
-:global(.editable-row:hover) :global(.editable-cell-value-wrap) {
-    padding: 4px 11px;
-    border: 1px solid #d9d9d9;
-    border-radius: 2px;
 }

@@ -1,6 +1,6 @@
 import style from './index.module.css'
 // import Cube from '../cube'
-import { Col, InputNumber, Row, Slider, Space } from 'antd';
+import {Col, InputNumber, Row, Slider, Space} from 'antd';
 import '@fontsource/archivo'
 import '@fontsource/fragment-mono'
 import {ConfigProvider, Spin, Table, Tabs, List, Radio, Form, Input, Select, Switch, Divider} from 'antd';
@@ -23,6 +23,7 @@ const colors = [
     '#EAF6FF', '#627264', '#AFD0D6', '#A7B0CA',
     '#DEE2D6', '#e16853', '#8fbac6', '#3a556f',
 ]
+
 
 function convertToRoman(num: number) {
     var roman = {
@@ -56,26 +57,69 @@ export default (props: any) => {
     const [size, setSize] = useState(10)
     const [semestre, setSemestre] = useState(.43)
     const [crecimiento, setCrecimiento] = useState(.05)
+    const [creditos, setCreditos] = useState(20)
+    const [plazas, setPlazas] = useState(36)
+
+    let inputs: any = []
+    let aforo = 0;
+    let promedio = 0;
+    if (props.data) {
+        inputs = props.data.filter((item: any) => {
+            return (item.activo == "Activo")
+        });
+        for (let i = 0; i < inputs.length; i++) {
+            aforo += inputs[i].aforo
+        }
+        promedio = aforo / inputs.length
+    }
+
+    console.log('FILTER')
+    console.log(inputs)
+    console.log(aforo)
+    console.log(promedio)
 
     let columns = []
-    for (let i=1; i<=size; i++) {
+    for (let i = 1; i <= size; i++) {
         let column = {
             title: convertToRoman(i),
             dataIndex: 'ciclo' + i,
             key: 'ciclo' + i,
             render(text: any, record: any) {
-                return {
-                    props: {
-                        style: {
-                            width: '80px',
-                            textAlign: 'center',
-                            lineHeight: '20px',
-                            padding: '2px',
-                            background: colors[record['ciclo' + i].index % size]
+                if (record['ciclo' + i].data.toString().indexOf("%") != -1) {
+
+                    let n = parseFloat(record['ciclo' + i].data.toString().substring(0, record['ciclo' + i].data.toString().length - 1))
+
+
+
+                    return {
+                        props: {
+                            style: {
+                                width: '80px',
+                                textAlign: 'center',
+                                lineHeight: '20px',
+                                padding: '2px',
+                                color: (n >= 100)?'red':'blue'
+                            },
                         },
-                    },
-                    children: <div>{record['ciclo' + i].data}</div>,
-                };
+                        children: <div>{record['ciclo' + i].data}</div>,
+                    };
+
+                }
+                else {
+
+                    return {
+                        props: {
+                            style: {
+                                width: '80px',
+                                textAlign: 'center',
+                                lineHeight: '20px',
+                                padding: '2px',
+                                background: colors[record['ciclo' + i].index % size]
+                            },
+                        },
+                        children: <div>{record['ciclo' + i].data}</div>,
+                    };
+                }
             }
         }
         columns.push(column)
@@ -106,15 +150,21 @@ export default (props: any) => {
     let index = 0;
 
     let totalC = {}
+    let totalD = {}
+    let totalE = {}
 
-    for (let i=1; i<=size; i++) {
+    for (let i = 1; i <= size; i++) {
         totalC['ciclo' + i] = {data: 0}
+        totalD['ciclo' + i] = {data: 0}
+        totalE['ciclo' + i] = {data: 0}
     }
-    totalC['total']= {data: 0}
+    totalC['total'] = {data: 0}
+    totalD['total'] = {data: 0}
+    totalE['total'] = {data: 0}
 
     for (let i = 1; i <= size; i++) {
         let _row: any = {}
-        for (let i=1; i<=size; i++) {
+        for (let i = 1; i <= size; i++) {
             _row['ciclo' + i] = {data: 0}
         }
         _row['total'] = {data: 0}
@@ -127,6 +177,9 @@ export default (props: any) => {
                     index: index
                 }
                 totalC['ciclo' + j].data += _row['ciclo' + j].data
+                totalD['ciclo' + j].data += _row['ciclo' + j].data*creditos
+                totalE['ciclo' + j].data = numbro(1 - (((plazas*aforo) - totalD['ciclo' + j].data)/(plazas*aforo))).format({output: 'percent', mantissa: 2})
+                //totalE['ciclo' + j].data = numbro((plazas*aforo)).format({mantissa: 2})
                 if (j % 2) {
                     _initial += Math.round(_initial * crecimiento)
                 }
@@ -137,11 +190,13 @@ export default (props: any) => {
                     index: ++index
                 }
                 totalC['ciclo' + j].data += Math.round(_row['ciclo' + (j - 1)].data * ((1 - desercion[j - i - 1])))
+                totalD['ciclo' + j].data += Math.round(_row['ciclo' + (j - 1)].data * ((1 - desercion[j - i - 1])))*creditos
+                totalE['ciclo' + j].data = numbro(1- (((plazas*aforo) - totalD['ciclo' + j].data)/(plazas*aforo))).format({output: 'percent', mantissa: 2})
+                //totalE['ciclo' + j].data = numbro((plazas*aforo)).format({mantissa: 2})
             }
-            if (j == size ) {
+            if (j == size) {
                 _row['total'].data = 0;
                 for (let k = 1; k <= size; k++) {
-                    console.log('K: ' + _row['ciclo' + k].data)
                     _row['total'].data += _row['ciclo' + k].data
                 }
             }
@@ -150,6 +205,8 @@ export default (props: any) => {
     }
 
     data.push(totalC)
+    //data.push(totalD)
+    data.push(totalE)
     return (
         <ConfigProvider
             theme={{
@@ -169,98 +226,163 @@ export default (props: any) => {
             }}
         >
             <div className={style.component}>
-
-
-
                 <div className={style.container}>
                     <Row>
-                    <Col span={2} style={{color: 'black'}}>
+                        <Col span={4} style={{color: 'black'}}>
                             # Ingresantes iniciales
                         </Col>
-                        <Col span={8}>
+                        <Col span={6}>
                             <Slider
                                 min={1}
                                 max={1000}
-                                onChange={(value: number) => { setInitial(value)}}
-                                value={typeof initial  === 'number' ? initial : 0}
+                                onChange={(value: number) => {
+                                    setInitial(value)
+                                }}
+                                value={typeof initial === 'number' ? initial : 0}
                             />
                         </Col>
                         <Col span={2}>
                             <InputNumber
                                 min={1}
                                 max={1000}
-                                style={{ margin: '0 16px' }}
+                                style={{margin: '0 16px'}}
                                 value={initial}
-                                onChange={(value: number) => { setInitial(value)}}
+                                onChange={(value: number) => {
+                                    setInitial(value)
+                                }}
                             />
                         </Col>
-                        <Col span={2} style={{color: 'black'}}>
+                        <Col span={4} style={{color: 'black'}}>
                             % de crecimiento anual
                         </Col>
-                        <Col span={8}>
+                        <Col span={6}>
                             <Slider
                                 min={0.05}
                                 max={1.00}
                                 step={0.01}
-                                onChange={(value: number) => { setCrecimiento(value)}}
-                                value={typeof crecimiento  === 'number' ?crecimiento : 0}
+                                onChange={(value: number) => {
+                                    setCrecimiento(value)
+                                }}
+                                value={typeof crecimiento === 'number' ? crecimiento : 0}
                             />
                         </Col>
                         <Col span={2}>
                             <InputNumber
                                 min={0.05}
                                 max={1.00}
-                                style={{ margin: '0 16px' }}
-                                value={typeof crecimiento  === 'number' ?crecimiento : 0}
-                                onChange={(value: number) => { setCrecimiento(value)}}
+                                style={{margin: '0 16px'}}
+                                value={typeof crecimiento === 'number' ? crecimiento : 0}
+                                onChange={(value: number) => {
+                                    setCrecimiento(value)
+                                }}
                             />
                         </Col>
                     </Row>
                     <Row>
-                        <Col span={2} style={{color: 'black'}}>
-                                # Número de ciclos
+                        <Col span={4} style={{color: 'black'}}>
+                            # Número de ciclos
                         </Col>
-                        <Col span={8}>
+                        <Col span={6}>
                             <Slider
                                 min={1}
-                                max={12}
-                                onChange={(value: number) => { setSize(value)}}
-                                value={typeof size  === 'number' ? size : 0}
+                                max={14}
+                                onChange={(value: number) => {
+                                    setSize(value)
+                                }}
+                                value={typeof size === 'number' ? size : 0}
                             />
                         </Col>
                         <Col span={2}>
                             <InputNumber
                                 min={1}
                                 max={12}
-                                onChange={(value: number) => { setSize(value)}}
-                                value={typeof size  === 'number' ? size : 0}
-                                style={{ margin: '0 16px' }}
+                                onChange={(value: number) => {
+                                    setSize(value)
+                                }}
+                                value={typeof size === 'number' ? size : 0}
+                                style={{margin: '0 16px'}}
 
                             />
                         </Col>
-                        <Col span={2} style={{color: 'black'}}>
-                                % Semestre final
+                        <Col span={4} style={{color: 'black'}}>
+                            % Semestre final
                         </Col>
-                        <Col span={8}>
+                        <Col span={6}>
                             <Slider
                                 min={0.05}
                                 max={1.00}
                                 step={0.01}
-                                onChange={(value: number) => { setSemestre(value)}}
-                                value={typeof semestre  === 'number' ?semestre : 0}
+                                onChange={(value: number) => {
+                                    setSemestre(value)
+                                }}
+                                value={typeof semestre === 'number' ? semestre : 0}
                             />
                         </Col>
                         <Col span={2}>
                             <InputNumber
                                 min={0.05}
                                 max={1.00}
-                                style={{ margin: '0 16px' }}
-                                onChange={(value: number) => { setSemestre(value)}}
-                                value={typeof semestre  === 'number' ?semestre : 0}
+                                style={{margin: '0 16px'}}
+                                onChange={(value: number) => {
+                                    setSemestre(value)
+                                }}
+                                value={typeof semestre === 'number' ? semestre : 0}
                             />
                         </Col>
                     </Row>
-                    <Divider />
+
+                    <Row>
+                        <Col span={4} style={{color: 'black'}}>
+                            # Horas alumno/semana
+                        </Col>
+                        <Col span={6}>
+                            <Slider
+                                min={1}
+                                max={30}
+                                onChange={(value: number) => {
+                                    setCreditos(value)
+                                }}
+                                value={typeof creditos === 'number' ? creditos: 0}
+                            />
+                        </Col>
+                        <Col span={2}>
+                            <InputNumber
+                                min={1}
+                                max={30}
+                                onChange={(value: number) => {
+                                    setCreditos(value)
+                                }}
+                                value={typeof creditos === 'number' ? creditos : 0}
+                                style={{margin: '0 16px'}}
+
+                            />
+                        </Col>
+                        <Col span={4} style={{color: 'black'}}>
+                            % Horas aforo/semana
+                        </Col>
+                        <Col span={6}>
+                            <Slider
+                                min={1}
+                                max={140}
+                                    onChange={(value: number) => {
+                                    setPlazas(value)
+                                }}
+                                value={typeof plazas === 'number' ? plazas: 0}
+                            />
+                        </Col>
+                        <Col span={2}>
+                            <InputNumber
+                                min={1}
+                                max={140}
+                                style={{margin: '0 16px'}}
+                                onChange={(value: number) => {
+                                    setPlazas(value)
+                                }}
+                                value={typeof plazas === 'number' ? plazas : 0}
+                            />
+                        </Col>
+                    </Row>
+                    <Divider/>
                     <Table
                         columns={columns}
                         dataSource={data}
