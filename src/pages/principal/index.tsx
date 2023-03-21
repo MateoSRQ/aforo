@@ -1475,7 +1475,6 @@ export default (props: any) => {
         >
             <div className={style.component} >
                 <Card title="Estomatología" data={data} handleChangeData={handleChangeData}/>
-                <Card title="Ingeniería Ambiental"/>
             </div>
         </ConfigProvider>
     )
