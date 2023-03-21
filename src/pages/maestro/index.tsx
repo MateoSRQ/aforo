@@ -24,6 +24,67 @@ const colors = [
     '#DEE2D6', '#e16853', '#8fbac6', '#3a556f',
 ]
 
+let desercion = [.15, .12, .12, .10, .05, .04, .03, .02, .02, .01, .01, .01]
+
+const calcularMatriz = (columnas: number, inicial: number, semestre: number,
+                        crecimiento: number, desercion: number[]) => {
+    let data = []
+    let _initial = inicial
+    let index = 0;
+
+    let totalC: Record<string, { data: number }> = {}
+    //let totalD: Record<string, { data: number }> = {}
+    //let totalE: Record<string, { data: number }> = {}
+    for (let i = 1; i <= columnas; i++) {
+        totalC['ciclo' + i] = {data: 0}
+    }
+
+    for (let i = 1; i <= columnas; i++) {
+        let _row: Record<string, { data: number, index?: number }> = {}
+        for (let i = 1; i <= columnas; i++) {
+            _row['ciclo' + i] = {data: 0}
+        }
+        _row['total'] = {data: 0}
+        for (let j = 1; j <= columnas; j++) {
+            if (j == i) {
+                let index: number = 0;
+                _row['ciclo' + j] = {
+                    data: Math.round(_initial * ((j % 2) ? 1 : semestre)),
+                    index: index
+                }
+                totalC['ciclo' + j].data += _row['ciclo' + j].data
+                //totalD['ciclo' + j].data += _row['ciclo' + j].data*creditos
+                //totalE['ciclo' + j].data = numbro(1 - (((plazas*aforo) - totalD['ciclo' + j].data)/(plazas*aforo))).format({output: 'percent', mantissa: 2})
+                //totalE['ciclo' + j].data = numbro((plazas*aforo)).format({mantissa: 2})
+                if (j % 2) {
+                    _initial += Math.round(_initial * crecimiento)
+                }
+            }
+            if (j > i && j <= columnas) {
+                _row['ciclo' + j] = {
+                    data: Math.round(_row['ciclo' + (j - 1)].data * ((1 - desercion[j - i - 1]))),
+                    index: ++index
+                }
+                totalC['ciclo' + j].data += Math.round(_row['ciclo' + (j - 1)].data * ((1 - desercion[j - i - 1])))
+                //totalD['ciclo' + j].data += Math.round(_row['ciclo' + (j - 1)].data * ((1 - desercion[j - i - 1])))*creditos
+                //totalE['ciclo' + j].data = numbro(1- (((plazas*aforo) - totalD['ciclo' + j].data)/(plazas*aforo))).format({output: 'percent', mantissa: 2})
+                //totalE['ciclo' + j].data = numbro((plazas*aforo)).format({mantissa: 2})
+            }
+            if (j == columnas) {
+                _row['total'].data = 0;
+                for (let k = 1; k <= columnas; k++) {
+                    _row['total'].data += _row['ciclo' + k].data
+                }
+            }
+        }
+        data.push(_row)
+    }
+    return data;
+}
+
+console.log('-------------------------------------')
+let matriz = calcularMatriz(10, 297, .43, .05, desercion);
+console.log(matriz)
 
 function convertToRoman(num: number) {
     var roman = {
