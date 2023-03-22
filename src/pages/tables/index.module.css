@@ -9,9 +9,66 @@
 }
 
 .card {
-    max-width: 900px;
+    max-width: 1200px;
     min-height: 200px;
     width: 100%;
     background-color: white;
     outline: 1px solid red;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.component :global(.ant-slider-rail)  {
+    height: 2px !important;
+}
+
+.component :global(.ant-slider-track) {
+    height: 2px !important;
+    background-color: #1677ff !important;
+}
+
+.component :global(.ant-slider-handle) {
+    transform: translateX(-50%) scale(0.6) translateY(-1px) !important;
+}
+
+.component :global(.ant-slider-handle):before {
+    width: 0px;
+    height: 0px;
+    background-color:  #1677ff;
+    border-radius: 50%;
+}
+
+.component :global(.ant-slider-handle):after {
+    width: 10px;
+    height: 10px;
+    background-color:  #1677ff;
+    box-shadow: none;
+    border-radius: 50% !important;
+}
+
+:global(.ant-slider-tooltip) {
+    transform: scale(.7) !important;
+    background-color:  #1677ff;
+    border-radius: 50% !important;
+
+}
+
+:global(.ant-tooltip-content) {
+
+    background-color:  #1677ff;
+}
+
+.component .label {
+    color: black;
+    /* text-align: center; */
+    font-size: 10.5px;
+    text-transform: uppercase;
+    font-weight: 500;
+    vertical-align: text-top;
+    margin-top: -14px;
+    margin-left: 49px;
 }
