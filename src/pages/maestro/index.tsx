@@ -24,9 +24,10 @@ const colors = [
     '#DEE2D6', '#e16853', '#8fbac6', '#3a556f',
 ]
 
-let desercion = [.15, .12, .12, .10, .05, .04, .03, .02, .02, .01, .01, .01]
-
-const calcularMatriz = (columnas: number, inicial: number, semestre: number,
+let desercion       = [.15, .12, .12, .10, .05, .04, .03, .02, .02, .01, .01, .01]
+let h_por_semana    = [27, 27, 28, 30, 29, 26, 27.5, 28.5, 20.5, 20.5]
+let aforo_promedio  = 32.06
+const calcularMatriz = (ciclos: number, columnas: number, inicial: number, semestre: number,
                         crecimiento: number, desercion: number[]) => {
     let data = []
     let _initial = inicial
@@ -42,49 +43,41 @@ const calcularMatriz = (columnas: number, inicial: number, semestre: number,
         for (let i = 1; i <= columnas; i++) {
             _row['ciclo' + i] = {data: 0}
         }
-        _row['total'] = {data: 0}
-        for (let j = 1; j <= columnas; j++) {
+        //_row['total'] = {data: 0}
+        for (let j = 1; j <= columnas && j <= (ciclos + i - 1); j++) {
             if (j == i) {
                 let index: number = 0;
-                console.log("j = i")
-                console.log("j: " + j)
-                console.log(_initial)
-                console.log(semestre)
-                console.log(_initial*semestre)   
-                console.log(Math.round(_initial * ((j % 2) ? 1 : semestre)))
                 _row['ciclo' + j] = {
                     data: Math.round(_initial * ((j % 2) ? 1 : semestre)),
                     index: index
-                }          
-    
-                totalC['ciclo' + j].data += _row['ciclo' + j].data
-                if ((j % 2) == 0) {
-                   _initial += Math.round(_initial * crecimiento)
                 }
-                console.log(_row['ciclo' + j])   
-            }
-            else if (j > i && j <= columnas) {
+                if ((j % 2) == 0) {
+                    _initial += Math.round(_initial * crecimiento)
+                }
+                //_row['total'].data += _row['ciclo' + j].data
+                totalC['ciclo' + j].data += _row['ciclo' + j].data
+            } else if (j > i && j <= columnas) {
                 _row['ciclo' + j] = {
                     data: Math.round(_row['ciclo' + (j - 1)].data * ((1 - desercion[j - i - 1]))),
                     index: ++index
                 }
+                _row['total'].data += _row['ciclo' + j].data
                 totalC['ciclo' + j].data += Math.round(_row['ciclo' + (j - 1)].data * ((1 - desercion[j - i - 1])))
-            }
-            else if (j == columnas) {
-                _row['total'].data = 0;
-                for (let k = 1; k <= columnas; k++) {
-                    _row['total'].data += _row['ciclo' + k].data
-                }
+            } else if (j == columnas) {
+                //_row['total'].data = 0;
+                //for (let k = 1; k <= columnas; k++) {
+                //    _row['total'].data += _row['ciclo' + k].data
+               // }
             }
         }
-        console.log(_row)
         data.push(_row)
     }
+    data.push(totalC)
     return data;
 }
 
 console.log('-------------------------------------')
-let matriz = calcularMatriz(10, 297, .43, .05, desercion);
+let matriz = calcularMatriz(10, 12, 297, .43, .05, desercion);
 console.log(matriz)
 
 function convertToRoman(num: number) {
@@ -152,7 +145,6 @@ export default (props: any) => {
                     let n = parseFloat(record['ciclo' + i].data.toString().substring(0, record['ciclo' + i].data.toString().length - 1))
 
 
-
                     return {
                         props: {
                             style: {
@@ -160,14 +152,13 @@ export default (props: any) => {
                                 textAlign: 'center',
                                 lineHeight: '20px',
                                 padding: '2px',
-                                color: (n >= 100)?'red':'blue'
+                                color: (n >= 100) ? 'red' : 'blue'
                             },
                         },
                         children: <div>{record['ciclo' + i].data}</div>,
                     };
 
-                }
-                else {
+                } else {
 
                     return {
                         props: {
@@ -239,8 +230,11 @@ export default (props: any) => {
                     index: index
                 }
                 totalC['ciclo' + j].data += _row['ciclo' + j].data
-                totalD['ciclo' + j].data += _row['ciclo' + j].data*creditos
-                totalE['ciclo' + j].data = numbro(1 - (((plazas*aforo) - totalD['ciclo' + j].data)/(plazas*aforo))).format({output: 'percent', mantissa: 2})
+                totalD['ciclo' + j].data += _row['ciclo' + j].data * creditos
+                totalE['ciclo' + j].data = numbro(1 - (((plazas * aforo) - totalD['ciclo' + j].data) / (plazas * aforo))).format({
+                    output: 'percent',
+                    mantissa: 2
+                })
                 //totalE['ciclo' + j].data = numbro((plazas*aforo)).format({mantissa: 2})
                 if (j % 2) {
                     _initial += Math.round(_initial * crecimiento)
@@ -252,8 +246,11 @@ export default (props: any) => {
                     index: ++index
                 }
                 totalC['ciclo' + j].data += Math.round(_row['ciclo' + (j - 1)].data * ((1 - desercion[j - i - 1])))
-                totalD['ciclo' + j].data += Math.round(_row['ciclo' + (j - 1)].data * ((1 - desercion[j - i - 1])))*creditos
-                totalE['ciclo' + j].data = numbro(1- (((plazas*aforo) - totalD['ciclo' + j].data)/(plazas*aforo))).format({output: 'percent', mantissa: 2})
+                totalD['ciclo' + j].data += Math.round(_row['ciclo' + (j - 1)].data * ((1 - desercion[j - i - 1]))) * creditos
+                totalE['ciclo' + j].data = numbro(1 - (((plazas * aforo) - totalD['ciclo' + j].data) / (plazas * aforo))).format({
+                    output: 'percent',
+                    mantissa: 2
+                })
                 //totalE['ciclo' + j].data = numbro((plazas*aforo)).format({mantissa: 2})
             }
             if (j == size) {
@@ -404,7 +401,7 @@ export default (props: any) => {
                                 onChange={(value: number) => {
                                     setCreditos(value)
                                 }}
-                                value={typeof creditos === 'number' ? creditos: 0}
+                                value={typeof creditos === 'number' ? creditos : 0}
                             />
                         </Col>
                         <Col span={2}>
@@ -426,10 +423,10 @@ export default (props: any) => {
                             <Slider
                                 min={1}
                                 max={140}
-                                    onChange={(value: number) => {
+                                onChange={(value: number) => {
                                     setPlazas(value)
                                 }}
-                                value={typeof plazas === 'number' ? plazas: 0}
+                                value={typeof plazas === 'number' ? plazas : 0}
                             />
                         </Col>
                         <Col span={2}>

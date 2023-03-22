@@ -1,0 +1,17 @@
+.component {
+    padding: 20px;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.card {
+    max-width: 900px;
+    min-height: 200px;
+    width: 100%;
+    background-color: white;
+    outline: 1px solid red;
+}
