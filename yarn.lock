@@ -508,6 +508,11 @@
   resolved "https://registry.yarnpkg.com/@fontsource/fragment-mono/-/fragment-mono-4.5.0.tgz#e4ccbe98383f65ac6c151f1dffded4a05bf392b1"
   integrity sha512-Ifv6L3JeQOvKlfa2ftgI7mY36dvDRwMR/xx7Er09PFu5UBSWaoORBAksBD+ODvs9EepTBgVUy5hIKmieO5IgGA==
 
+"@fontsource/rubik@^4.5.14":
+  version "4.5.14"
+  resolved "https://registry.yarnpkg.com/@fontsource/rubik/-/rubik-4.5.14.tgz#90962506504eee50ec8deba85e5d08675331f366"
+  integrity sha512-EvMK3kkeAgKkk8qAeT4PjpyAYyu72pIlJm+SXJ5vR/xhCX2yj2xoq3+YS38rPmPcCAnrAVONoQ3ezLxVm6jhBA==
+
 "@graphql-typed-document-node/core@^3.1.1":
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/@graphql-typed-document-node/core/-/core-3.1.1.tgz#076d78ce99822258cf813ecc1e7fa460fa74d052"

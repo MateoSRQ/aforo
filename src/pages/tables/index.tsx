@@ -1,9 +1,10 @@
 import style from './index.module.css'
-import {Col, Collapse, ConfigProvider, Divider, InputNumber, Row, Slider} from "antd";
+import {Col, Collapse, ConfigProvider, Divider, InputNumber, Row, Slider, Table} from "antd";
 import ReactECharts from 'echarts-for-react';
+import Title from "antd/es/typography/Title";
+import "@fontsource/rubik"
 
 const {Panel} = Collapse;
-import Title from "antd/es/typography/Title";
 
 const calcularMatriz = (ciclos: number, columnas: number, inicial: number, semestre: number,
                         crecimiento: number, desercion: number[]) => {
@@ -21,10 +22,9 @@ const calcularMatriz = (ciclos: number, columnas: number, inicial: number, semes
         for (let i = 1; i <= columnas; i++) {
             _row['ciclo' + i] = {data: 0}
         }
-//_row['total'] = {data: 0}
         for (let j = 1; j <= columnas && j <= (ciclos + i - 1); j++) {
             if (j == i) {
-                let index: number = 0;
+                index = 0;
                 _row['ciclo' + j] = {
                     data: Math.round(_initial * ((j % 2) ? 1 : semestre)),
                     index: index
@@ -32,20 +32,14 @@ const calcularMatriz = (ciclos: number, columnas: number, inicial: number, semes
                 if ((j % 2) == 0) {
                     _initial += Math.round(_initial * crecimiento)
                 }
-//_row['total'].data += _row['ciclo' + j].data
                 totalC['ciclo' + j].data += _row['ciclo' + j].data
-            } else if (j > i && j <= columnas) {
+            }
+            else if (j > i && j <= columnas) {
                 _row['ciclo' + j] = {
                     data: Math.round(_row['ciclo' + (j - 1)].data * ((1 - desercion[j - i - 1]))),
-                    index: ++index
+                    index: ++index%(columnas)
                 }
-                //_row['total'].data += _row['ciclo' + j].data
                 totalC['ciclo' + j].data += Math.round(_row['ciclo' + (j - 1)].data * ((1 - desercion[j - i - 1])))
-            } else if (j == columnas) {
-//_row['total'].data = 0;
-//for (let k = 1; k <= columnas; k++) {
-//    _row['total'].data += _row['ciclo' + k].data
-// }
             }
         }
         data.push(_row)
@@ -54,13 +48,125 @@ const calcularMatriz = (ciclos: number, columnas: number, inicial: number, semes
     return data;
 }
 
+function convertToRoman(num: number) {
+    let roman : Record<string, number> = {
+        M: 1000,
+        CM: 900,
+        D: 500,
+        CD: 400,
+        C: 100,
+        XC: 90,
+        L: 50,
+        XL: 40,
+        X: 10,
+        IX: 9,
+        V: 5,
+        IV: 4,
+        I: 1
+    };
+    var str = '';
+
+    for (var i of Object.keys(roman)) {
+        var q = Math.floor(num / roman[i]);
+        num -= q * roman[i];
+        str += i.repeat(q);
+    }
+
+    return str;
+}
+
+const colors = [
+    '#B4D6D3', '#AA78A6', '#8FB8ED', '#A2AD91',
+    '#EAF6FF', '#627264', '#AFD0D6', '#A7B0CA',
+    '#DEE2D6', '#e16853', '#8fbac6', '#3a556f',
+]
+
+const mmax = (matriz: any, type?: boolean) => {
+    let datasum = matriz[matriz.length - 1];
+    let max = 0;
+    let maxrow = ''
+    let lastrow = ''
+    let result = []
+    Object.keys(datasum).forEach(function (key, index) {
+        if (datasum[key].data > max) {
+            max = datasum[key].data
+            maxrow = key
+        }
+        lastrow = key
+    })
+    if (type) maxrow = lastrow
+
+    for (let i=0; i< matriz.length - 1; i++) {
+        if (matriz[i][maxrow].data) result.push(matriz[i][maxrow].data);
+    }
+    return result
+}
+
+const columnas = (columnas: number, width: number, height: number) => {
+    let columns = []
+    for (let i = 1; i <= columnas; i++) {
+        let column = {
+            title: convertToRoman(i),
+            dataIndex: 'ciclo' + i,
+            key: 'ciclo' + i,
+            render(text: any, record: any) {
+                if (record['ciclo' + i].data.toString().indexOf("%") != -1) {
+                    let n = parseFloat(record['ciclo' + i].data.toString().substring(0, record['ciclo' + i].data.toString().length - 1))
+                    return {
+                        props: {
+                            style: {
+                                width: width + 'px',
+                                textAlign: 'center',
+                                lineHeight: height + 'px',
+                                padding: '2px',
+                                color: (n >= 100) ? 'red' : 'blue'
+                            },
+                        },
+                        children: <div>{record['ciclo' + i].data}</div>,
+                    };
+
+                } else {
+
+                    return {
+                        props: {
+                            style: {
+                                width: '80px',
+                                textAlign: 'center',
+                                lineHeight: '20px',
+                                padding: '2px',
+                                background: colors[record['ciclo' + i].index % columnas]
+                            },
+                        },
+                        children: <div>{record['ciclo' + i].data}</div>,
+                    };
+                }
+            }
+        }
+        columns.push(column)
+    }
+    return columns;
+}
+
+const calcularAforo = (matriz: any, coeficientes: any, aforo_promedio: number, asistencia: number) => {
+    const _max = mmax(matriz, true)
+    let result = []
+    for (let i=0; i<_max.length; i++)  {
+        console.log(_max[i] + "/" + aforo_promedio +"*" + coeficientes[i] + " = " + _max[i]/(aforo_promedio*coeficientes[i])*asistencia)
+        result.push(Math.ceil(_max[i]/aforo_promedio)*coeficientes[i]*asistencia)
+    }
+    return result
+}
+
 
 let desercion = [.15, .12, .12, .10, .05, .04, .03, .02, .02, .01, .01, .01]
 let h_por_semana = [27, 27, 28, 30, 29, 26, 27.5, 28.5, 20.5, 20.5]
 let aforo_promedio = 32.06
 
+let coeficientes = [27, 27, 28, 30, 29, 28, 27.5, 28.5, 20.5, 20.5]
+
 let matriz = calcularMatriz(10, 12, 297, .43, .05, desercion);
-console.log(matriz)
+
+console.log(calcularAforo(matriz, coeficientes, 38.03, .9))
 
 
 let data = {}
@@ -72,13 +178,17 @@ for (let i = 0; i < matriz.length - 1; i++) {
     })
 }
 
-
 let _series = []
 let _data = []
 Object.keys(data).forEach(function (key, index) {
     _series.push(key)
     _data.push(data[key])
 })
+
+
+
+let columns = columnas(12, 80, 20);
+
 
 
 export default () => {
@@ -130,60 +240,21 @@ export default () => {
             <div className={style.component}>
                 <div className={style.card}>
                     <div>
-                        <Title level={2} style={{color: "#444"}}>Sede Jesús María</Title>
+                        <Title level={2} style={{color: "#444", fontFamily: 'Rubik', textTransform: 'uppercase', letterSpacing: '-.6px'}}>Sede Jesús María</Title>
                     </div>
-                    <div style={{padding: '12px', width: 'calc(100% - 40px)'}}>
-                        <Row>
-                            <Col span={1}></Col>
-                            <Col span={22}>
-                                <Slider
-                                    min={1}
-                                    max={1000}
 
-                                    // onChange={(value: number) => {
-                                    //     setInitial(value)
-                                    // }}
-                                    // value={typeof initial === 'number' ? initial : 0}
-                                />
-                            </Col>
-                            <Col span={1}></Col>
-                        </Row>
-                        <Row>
-                            <Col span={1}></Col>
-                            <Col span={22}>
-                                <div className={style.label}>Ejemplo de slider y adecuacion</div>
-                            </Col>
-                            <Col span={1}></Col>
-                        </Row>
-
-                        <Row>
-                            <Col span={1}></Col>
-                            <Col span={22}>
-                                <Slider
-                                    min={1}
-                                    max={1000}
-
-                                    // onChange={(value: number) => {
-                                    //     setInitial(value)
-                                    // }}
-                                    // value={typeof initial === 'number' ? initial : 0}
-                                />
-                            </Col>
-                            <Col span={1}></Col>
-                        </Row>
-                        <Row>
-                            <Col span={1}></Col>
-                            <Col span={22}>
-                                <div className={style.label}>Ejemplo de slider y adecuacion</div>
-                            </Col>
-                            <Col span={1}></Col>
-                        </Row>
-                    </div>
                     <Collapse style={{width: '100%'}} bordered={false} ghost collapsible="header"
                               defaultActiveKey={['1']}>
                         <Panel header="This panel can only be collapsed by clicking text" key="1">
                             <div>
                                 <ReactECharts option={options} style={{height: '300px'}}/>;
+                            </div>
+                            <div>
+                                <Table
+                                    columns={columns}
+                                    dataSource={matriz}
+                                    pagination={false}
+                                />
                             </div>
                         </Panel>
                     </Collapse>
