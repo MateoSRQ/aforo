@@ -45,7 +45,7 @@ const mmax = (matriz: any, type?: boolean) => {
     if (type) maxrow = lastrow
 
     for (let i=0; i< matriz.length - 1; i++) {
-        //if (matriz[i][maxrow].data)
+        if (matriz[i][maxrow].data)
             result.push(matriz[i][maxrow].data);
     }
     return result
@@ -139,8 +139,16 @@ const calcularAforo = (matriz: any, coeficientes: any, aforo_promedio: number, a
     const _max = mmax(matriz, true)
     let result = []
     for (let i=0; i<_max.length; i++)  {
-        result.push(Math.ceil(_max[i]/aforo_promedio)*coeficientes[i]*asistencia)
+        for (let i=0; i<_max.length; i++) {
+            console.log(_max[i])
+            console.log(aforo_promedio)
+            console.log(_max[i] / aforo_promedio)
+            console.log(Math.ceil(_max[i] / aforo_promedio))
+            console.log(Math.ceil(_max[i] / aforo_promedio) * coeficientes[i])
+            console.log(Math.ceil(_max[i] / aforo_promedio) * coeficientes[i] * asistencia)
+            result.push(Math.ceil(_max[i] / aforo_promedio) * coeficientes[i] * asistencia)
+        }
     }
     return result
 }
-export {calcularMatriz, columnas, calcularAforo}
+export {calcularMatriz, columnas, calcularAforo, mmax}
