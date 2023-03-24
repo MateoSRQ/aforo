@@ -1,0 +1,61 @@
+.component {
+    width: 100%;
+    height: 100%;
+    /*margin: 10px;*/
+}
+
+.component :global(.ant-table-cell) {
+    text-align: right !important;
+}
+
+
+.component :global(.ant-table-expanded-row-level-1) > td {
+    padding: 0px !important;
+}
+
+.component :global(.ant-table-expanded-row-level-1) > td > div {
+    padding: 0px !important;
+}
+
+.component :global(.ant-table-expanded-row-level-1) > td thead {
+    display: none !important;
+}
+
+.component :global(.ant-table-expanded-row-level-1)  td {
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+}
+
+
+.component :global(.ant-table-row-level-0) * {
+}
+
+.component table :global(.ant-table-cell) th {
+    text-align: 'right' !important;
+}
+
+.component th {
+    text-align: 'right' !important;
+}
+
+
+/* [,,,'#6baed6','#4292c6','#2171b5','#084594'] */
+
+.loader {
+    width: 100vw;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-direction: row;
+    position: absolute;
+    z-index: 1000;
+
+}
+
+.component :global(.ant-table-expanded-row.ant-table-expanded-row-level-1)> td {
+    padding: 0px !important;
+}

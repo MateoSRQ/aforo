@@ -1,0 +1,34 @@
+.component {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: left;
+    justify-items: left;
+    flex-flow: row;
+}
+
+.component .menuContainer {
+    width: 100%;
+    border: 1px solid red;
+    height: 100%;
+}
+
+
+/*
+.component :global(.ant-tag) :global(.ant-tag-close-icon) {
+    position: relative;
+    right: -110px;
+    width: 120px;
+}
+
+.component :global(.ant-tag)  {
+    font-size: 12px;
+}
+
+.component :global(.ant-select) {
+    width: 100%;
+}
+
+ */
