@@ -1,0 +1,196 @@
+[
+  {
+    "key": 1,
+    "sede": "Jesús María",
+    "total": 1143.45,
+    "carreras": [
+      {
+        "key": 1,
+        "carrera": "Administración y Negocios Internacionales",
+        "total": 1143.45,
+        "valores": {
+          "inicial": 297,
+          "crecimiento": 0.05,
+          "semestre": 0.43,
+          "ciclos": 10,
+          "columnas": 12,
+          "asistencia": 0.9,
+          "coeficientes": [27, 27, 28, 30, 29, 28, 27.5, 28.5, 20.5, 20.5]
+        }
+      },
+      {
+        "key": 2,
+        "carrera": "Ciencias Contables y Financieras",
+        "valores": {
+          "inicial": 0,
+          "crecimiento": 0.05,
+          "semestre": 0.43,
+          "ciclos": 10,
+          "columnas": 12,
+          "asistencia": 0.9,
+          "coeficientes": [28, 28, 28, 28, 28, 28, 23, 25, 20.5, 20.5]
+        }
+      },
+      {
+        "key": 3,
+        "carrera": "Derecho y Ciencias Políticas",
+        "valores": {
+          "inicial": 0,
+          "crecimiento": 0.05,
+          "semestre": 0.43,
+          "ciclos": 12,
+          "columnas": 12,
+          "asistencia": 0.9,
+          "coeficientes": [30, 30, 29, 28, 27, 27.5, 24, 26.5, 28, 28, 23.5, 19.5]
+        }
+      },
+      {
+        "key": 4,
+        "carrera": "Enfermería",
+        "valores": {
+          "inicial": 0,
+          "crecimiento": 0.05,
+          "semestre": 0.43,
+          "ciclos": 10,
+          "columnas": 12,
+          "asistencia": 0.9,
+          "coeficientes": [0, 16, 13, 24, 25, 16, 18, 18, 18.5, 17.5]
+        }
+      },
+      {
+        "key": 5,
+        "carrera": "Estomatología",
+        "valores": {
+          "inicial": 0,
+          "crecimiento": 0.05,
+          "semestre": 0.43,
+          "ciclos": 10,
+          "columnas": 12,
+          "asistencia": 0.9,
+          "coeficientes": [5, 12, 11, 15, 11, 19, 21, 18, 17.5, 16.5]
+        }
+      },
+      {
+        "key": 6,
+        "carrera": "Tecnología Médica en Terapia Física y Rehabilitación",
+        "valores": {
+          "inicial": 0,
+          "crecimiento": 0.05,
+          "semestre": 0.43,
+          "ciclos": 10,
+          "columnas": 12,
+          "asistencia": 0.9,
+          "coeficientes": [1, 0, 10, 15, 11, 11, 16, 14, 19.5, 18.5]
+        }
+      },
+      {
+        "key": 7,
+        "carrera": "Psicología",
+        "valores": {
+          "inicial": 0,
+          "crecimiento": 0.05,
+          "semestre": 0.43,
+          "ciclos": 10,
+          "columnas": 12,
+          "asistencia": 0.9,
+          "coeficientes": [2, 2, 14, 14, 18, 14, 24.5, 24.5, 19.5, 19.5]
+        }
+      },
+      {
+        "key": 8,
+        "carrera": "Ingeniería Ambiental",
+        "valores": {
+          "inicial": 0,
+          "crecimiento": 0.05,
+          "semestre": 0.43,
+          "ciclos": 10,
+          "columnas": 12,
+          "asistencia": 0.9,
+          "coeficientes": [15, 25, 28, 20, 23, 24, 23.5, 17.5, 23.5, 21.5]
+        }
+      },
+      {
+        "key": 9,
+        "carrera": "Ingeniería Civil",
+        "valores": {
+          "inicial": 0,
+          "crecimiento": 0.05,
+          "semestre": 0.43,
+          "ciclos": 10,
+          "columnas": 12,
+          "asistencia": 0.9,
+          "coeficientes": [20, 20, 20, 24, 19, 19, 16, 18, 21.5, 20.5]
+        }
+      },
+      {
+        "key": 10,
+        "carrera": "Ingeniería de Sistamas e Informática",
+        "valores": {
+          "inicial": 0,
+          "crecimiento": 0.05,
+          "semestre": 0.43,
+          "ciclos": 10,
+          "columnas": 12,
+          "asistencia": 0.9,
+          "coeficientes": [14, 16, 15, 14, 13, 16, 12.5, 16.5, 19.5, 18.5]
+        }
+      },
+      {
+        "key": 11,
+        "carrera": "Arquitectura",
+        "valores": {
+          "inicial": 0,
+          "crecimiento": 0.05,
+          "semestre": 0.43,
+          "ciclos": 10,
+          "columnas": 12,
+          "asistencia": 0.9,
+          "coeficientes": [19, 23, 21, 17, 15.5, 16.5, 17.5, 17.5, 18.5, 16]
+        }
+      },
+      {
+        "key": 12,
+        "carrera": "Ingeniería Industrial",
+        "valores": {
+          "inicial": 0,
+          "crecimiento": 0.05,
+          "semestre": 0.43,
+          "ciclos": 10,
+          "columnas": 12,
+          "asistencia": 0.9,
+          "coeficientes": [29, 27, 27, 24, 25, 21, 18.5, 19.5, 21.5, 21.5]
+        }
+      }
+    ]
+  },
+  {
+    "key": 2,
+    "sede": "La Victoria",
+    "carreras": []
+  },
+  {
+    "key": 3,
+    "sede": "Pueblo Libre",
+    "carreras": []
+  },
+  {
+    "key": 4,
+    "sede": "Arequipa",
+    "carreras": []
+  },
+  {
+    "key": 5,
+    "sede": "Chiclayo",
+    "carreras": []
+  },
+  {
+    "key": 6,
+    "sede": "Piura",
+    "carreras": []
+  },
+  {
+    "key": 7,
+    "sede": "Coronel Portillo",
+    "carreras": []
+  }
+]
