@@ -3,6 +3,7 @@ import {Col, Collapse, ConfigProvider, Divider, Input, InputNumber, Radio, Row, 
 import "@fontsource/archivo"
 import "@fontsource/anton"
 import "@fontsource/roboto"
+import "@fontsource/roboto/700.css"
 import "@fontsource/open-sans"
 import type {ColumnsType} from 'antd/es/table';
 import {calcularMatriz, calcularAforo, columnas, mmax} from './functions'
@@ -15,10 +16,26 @@ import {create} from 'zustand'
 const {Panel} = Collapse;
 
 const columns: any = [
-    {title: 'Sede', dataIndex: 'sede', key: 'sede'},
+    {
+        title: 'Sede', dataIndex: 'sede', key: 'sede', width: 350, render: (text: any, record: any) => {
+            return (
+                <div style={{fontWeight: 500, fontSize: '22px'}}>
+                    {record.sede}
+                </div>
+            )
+        }
+    },
+    {title: 'Población Inicial', dataIndex: 'sede1', key: 'sede1'},
+    {title: '% Crecimiento', dataIndex: 'sede2', key: 'sede2'},
+    {title: '% Ingreso Semestre Par', dataIndex: 'sede3', key: 'sede3'},
+    {title: '% Asistencia', dataIndex: 'sede5', key: 'sede5'},
     {
         title: 'Total', dataIndex: 'total', key: 'total', render: (text: any, record: any) => {
-            return record?.total ? numbro(record.total).format({mantissa: 2}) : ''
+            return (
+                <div style={{fontWeight: 500, fontSize: '22px'}}>
+                    {record?.total ? numbro(record.total).format({mantissa: 2}) : ''}
+                </div>
+            )
         }
     },
     // { title: 'Nombre', dataIndex: 'nombre', key: 'nombre' },
@@ -26,7 +43,7 @@ const columns: any = [
 ];
 
 const sede_columns: any = [
-    {title: 'Carrera', dataIndex: 'carrera', key: 'carrera'},
+    {title: 'Carrera', dataIndex: 'carrera', key: 'carrera', width: 350},
     {
         title: 'Población inicial', dataIndex: 'inicial', key: 'inicial', render: (text: any, record: any) => {
             return record?.valores?.inicial ? numbro(record.valores.inicial).format({mantissa: 0}) : ''
@@ -42,8 +59,12 @@ const sede_columns: any = [
             return record?.valores?.semestre ? numbro(record.valores.semestre * 100).format({mantissa: 0}) + '%' : ''
         }
     },
-    {title: 'Ciclos', dataIndex: 'valores.ciclos', key: 'ciclos'},
-    {title: '% Asistencia', dataIndex: 'valores.asistencia', key: 'asistencia'},
+    //{title: 'Ciclos', dataIndex: 'valores.ciclos', key: 'ciclos'},
+    {
+        title: '% Asistencia', dataIndex: 'valores.asistencia', key: 'asistencia', render: (text: any, record: any) => {
+            return record?.valores?.asistencia ? numbro(record.valores.asistencia * 100).format({mantissa: 0}) + '%' : ''
+        }
+    },
     {
         title: 'Total', dataIndex: 'total', key: 'total', render: (text: any, record: any) => {
             return record?.total ? numbro(record.total).format({mantissa: 2}) : ''
@@ -55,10 +76,9 @@ const carrera_columns: any = [
     {title: 'Población inicial', dataIndex: 'inicial', key: 'inicial'},
     {title: '% Crecimiento', dataIndex: 'crecimiento', key: 'crecimiento'},
     {title: '% Ingreso Semestre Par', dataIndex: 'semestre', key: 'semestre'},
-    {title: 'Ciclos', dataIndex: 'ciclos', key: 'ciclos'},
+    //{title: 'Ciclos', dataIndex: 'ciclos', key: 'ciclos'},
     {title: '% Asistencia', dataIndex: 'asistencia', key: 'asistencia'},
 ]
-
 
 let desercion = [.15, .12, .12, .10, .05, .04, .03, .02, .02, .01, .01, .01]
 //let aforo = 38.06
@@ -67,21 +87,27 @@ const AppContext = React.createContext({})
 
 const MasterTable = (props: any) => {
     return (
-        <div className={style.card}>
-            <Table
-                //key={Math.random()}
-                style={{width: '100%'}}
-                pagination={false}
-                columns={props.columns}
-                expandable={{
-                    //defaultExpandAllRows: true,
-                    expandedRowRender: (record) => {
-                        return <SedeTable data={record.carreras} sede={record.sede}/>
-                    }
-                }}
-                dataSource={props.data}
-            />
-        </div>
+        <>
+            <div className={style.card}>
+                <div className={style.title}>Universidad Alas Peruanas - Análisis de Aforo</div>
+                <Table
+                    //key={Math.random()}
+                    style={{width: '100%'}}
+                    pagination={false}
+                    columns={props.columns}
+                    expandable={{
+                        //defaultExpandAllRows: true,
+                        expandedRowRender: (record) => {
+                            return <SedeTable data={record.carreras} sede={record.sede}/>
+                        }
+                    }}
+                    dataSource={props.data}
+                />
+            </div>
+            <div className={style.card}>
+                <div style={{height: '50px', color: 'gray', lineHeight: '50px', textTransform: 'uppercase', fontSize: '12px'}}>Universidad Alas Peruanas - Gerencia de Tecnología</div>
+            </div>
+        </>
     )
 }
 
@@ -109,7 +135,7 @@ const CarreraTable = (props: any) => {
     //const [inicial, setInicial] = useState(props.inicial)
     //const [crecimiento, setCrecimiento] = useState(props.crecimiento)
     //const [semestre, setSemestre] = useState(props.semestre)
-    const [asistencia, setAsistencia] = useState(props.asistencia)
+    //const [asistencia, setAsistencia] = useState(props.asistencia)
 
     let matriz = calcularMatriz(props.ciclos, props.columnas, props.inicial, props.semestre, props.crecimiento, desercion);
     let columns = columnas(12, 80, 20);
@@ -119,7 +145,7 @@ const CarreraTable = (props: any) => {
     let rdata: any = {
         a: mmax(matriz, true),
         b: props.coeficientes,
-        c: calcularAforo(matriz, props.coeficientes, 38.06, asistencia)
+        c: calcularAforo(matriz, props.coeficientes, 38.06, props.asistencia)
     }
     let cdata: any = []
     let ccolumns: any = []
@@ -197,7 +223,7 @@ const CarreraTable = (props: any) => {
         }
     })
 
-    let _caforo = calcularAforo(matriz, props.coeficientes, 38.06, asistencia).length ? calcularAforo(matriz, props.coeficientes, 38.06, asistencia).reduce((sum = 0, current = 0) => {
+    let _caforo = calcularAforo(matriz, props.coeficientes, 38.06, props.asistencia).length ? calcularAforo(matriz, props.coeficientes, 38.06, props.asistencia).reduce((sum = 0, current = 0) => {
         return sum + current
     }) : 0
 
@@ -321,7 +347,6 @@ const CarreraTable = (props: any) => {
                             max={1}
                             value={props.crecimiento}
                             onChange={(value: number) => {
-                                //setCrecimiento(value)
                                 vrepl(props.sede, props.carrera, 'crecimiento', value)
                             }}
                             style={{
@@ -359,9 +384,10 @@ const CarreraTable = (props: any) => {
                             step={0.01}
                             min={0}
                             max={1}
-                            value={asistencia}
+                            value={props.asistencia}
                             onChange={(value: number) => {
-                                setAsistencia(value)
+                                //setAsistencia(value)
+                                vrepl(props.sede, props.carrera, 'asistencia', value)
                             }}
                             style={{
                                 width: '100%',
@@ -416,9 +442,10 @@ const CarreraTable = (props: any) => {
                             step={0.01}
                             min={0}
                             max={1}
-                            value={asistencia}
+                            value={props.asistencia}
                             onChange={(value: number) => {
-                                setAsistencia(value)
+                                //setAsistencia(value)
+                                vrepl(props.sede, props.carrera, 'asistencia', value)
                             }}
                             style={{filter: 'grayscale(1)'}}
                         />

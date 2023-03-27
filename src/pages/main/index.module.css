@@ -83,3 +83,15 @@
     text-align: center !important;
     margin-top: 9px !important;
 }
+
+.title {
+    text-align: center;
+    font-size: 32px;
+    color: black;
+    line-height: 40px;
+    font-family: "Roboto", Arial, sans-serif;
+    font-weight: 700 !important;
+    height: 60px;
+    margin-top: 20px;
+    letter-spacing: -.7px;
+}
