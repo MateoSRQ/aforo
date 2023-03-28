@@ -10,7 +10,11 @@ import {calcularMatriz, calcularAforo, columnas, mmax} from './functions'
 import React, {useContext, useState} from "react";
 import numbro from "numbro";
 import _data from './data.json'
-import {create} from 'zustand'
+import _aforo from './aforo.json'
+import Aforo from "../aforo";
+import {InsertRowBelowOutlined} from "@ant-design/icons";
+import {Tabs} from 'antd';
+import type {TabsProps} from 'antd';
 
 
 const {Panel} = Collapse;
@@ -86,28 +90,102 @@ let desercion = [.15, .12, .12, .10, .05, .04, .03, .02, .02, .01, .01, .01]
 const AppContext = React.createContext({})
 
 const MasterTable = (props: any) => {
+
+    const items: TabsProps['items'] = [
+            {
+                key: '1',
+                label: `Análisis de ocupabilidad`,
+                children: (
+                    <>
+                        {/*<div className={style.card}>*/}
+                        <div className={style.title}>Universidad Alas Peruanas - Análisis de Aforo</div>
+                        <Table
+                            //key={Math.random()}
+                            style={{width: '100%'}}
+                            pagination={false}
+                            columns={props.columns}
+                            expandable={{
+                                //defaultExpandAllRows: true,
+                                expandedRowRender: (record) => {
+                                    return <SedeTable data={record.carreras} sede={record.sede}/>
+                                }
+                            }}
+                            dataSource={props.data}
+                        />
+                        {/*</div>*/}
+                        {/*<div className={style.card}>*/}
+                        <div style={{
+                            height: '50px',
+                            color: 'gray',
+                            lineHeight: '50px',
+                            textTransform: 'uppercase',
+                            fontSize: '12px'
+                        }}>Universidad Alas Peruanas - Gerencia de Tecnología
+                        </div>
+
+                        {/*</div>*/}
+                    </>)
+            },
+            {
+                key: '2',
+                label: `Registro de generadores de aforo `,
+                children: (
+                    <div>
+                        {/*<div className={style.card}>*/}
+                        <div className={style.title}>Universidad Alas Peruanas - Registro de Generadores de Aforo</div>
+                        <Table
+                            //key={Math.random()}
+                            style={{width: '100%'}}
+                            pagination={false}
+                            columns={props.columns}
+                            expandable={{
+                                //defaultExpandAllRows: true,
+                                expandedRowRender: (record) => {
+                                    return <Aforo data={_aforo}/>
+                                }
+                            }}
+                            dataSource={props.data}
+                        />
+                        {/*</div>*/}
+                        {/*<div className={style.card}>*/}
+                        <div style={{
+                            height: '50px',
+                            color: 'gray',
+                            lineHeight: '50px',
+                            textTransform: 'uppercase',
+                            fontSize: '12px'
+                        }}>Universidad Alas Peruanas - Gerencia de Tecnología
+                        </div>
+                    </div>
+                )
+            }
+        ]
+    ;
+
     return (
-        <>
-            <div className={style.card}>
-                <div className={style.title}>Universidad Alas Peruanas - Análisis de Aforo</div>
-                <Table
-                    //key={Math.random()}
-                    style={{width: '100%'}}
-                    pagination={false}
-                    columns={props.columns}
-                    expandable={{
-                        //defaultExpandAllRows: true,
-                        expandedRowRender: (record) => {
-                            return <SedeTable data={record.carreras} sede={record.sede}/>
-                        }
-                    }}
-                    dataSource={props.data}
-                />
-            </div>
-            <div className={style.card}>
-                <div style={{height: '50px', color: 'gray', lineHeight: '50px', textTransform: 'uppercase', fontSize: '12px'}}>Universidad Alas Peruanas - Gerencia de Tecnología</div>
-            </div>
-        </>
+        <div className={style.card}>
+            <Tabs defaultActiveKey="1" items={items} style={{width: '100%', padding: '24px'}}/>
+        </div>
+    )
+}
+
+const SedeAforoTable = (props: any) => {
+    return (
+        <div className={style.card}>
+            <Table
+                //key={Math.random()}
+                style={{width: '100%'}}
+                pagination={false}
+                columns={sede_columns}
+                expandable={{
+                    //defaultExpandAllRows: true,
+                    expandedRowRender: (record) => {
+                        return <Aforo data={_aforo}/>
+                    }
+                }}
+                dataSource={props.data}
+            />
+        </div>
     )
 }
 
@@ -233,7 +311,7 @@ const CarreraTable = (props: any) => {
             let prev_total = json[i].total
             let sede_total = 0
             for (let j = 0; j < json[i].carreras.length; j++) {
-                sede_total += json[i].carreras[j].total?json[i].carreras[j].total:0
+                sede_total += json[i].carreras[j].total ? json[i].carreras[j].total : 0
             }
             if (sede_total != prev_total) {
                 dirty = true
@@ -286,7 +364,7 @@ const CarreraTable = (props: any) => {
                 if (_tdata[i].sede == from) {
                     for (let j = 0; j < _tdata[i].carreras.length; j++) {
                         if (_tdata[i].carreras[j].carrera == carrera) {
-                            temp= _tdata[i].carreras[j]
+                            temp = _tdata[i].carreras[j]
                             _tdata[i].carreras.splice(j, 1);
                             //delete _tdata[i].carreras[j]
                             break outerBlock;
@@ -304,16 +382,16 @@ const CarreraTable = (props: any) => {
     }
 
     const vbranch = (carrera: string, from: string, to: string) => {
-       let _tdata = branch(data, carrera, from, to)
-       if (_tdata && _tdata != data) {
-           _tdata = sedepl(_tdata)
-           setData(_tdata)
-       }
+        let _tdata = branch(data, carrera, from, to)
+        if (_tdata && _tdata != data) {
+            _tdata = sedepl(_tdata)
+            setData(_tdata)
+        }
     }
     vrepl(props.sede, props.carrera, 'total', _caforo)
 
     const sedeChange = (e) => {
-        vbranch( props.carrera, props.sede, e.target.value)
+        vbranch(props.carrera, props.sede, e.target.value)
     }
 
     return (
