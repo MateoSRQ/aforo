@@ -11,7 +11,7 @@ import React, {useContext, useState} from "react";
 import numbro from "numbro";
 import _data from './data.json'
 import _aforo from './aforo.json'
-import _etca from './etca.json'
+import _etca from './etca2.json'
 import Aforo from "../aforo2";
 import {InsertRowBelowOutlined} from "@ant-design/icons";
 import {Tabs} from 'antd';

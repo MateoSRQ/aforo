@@ -238,8 +238,8 @@ export default (props: any) => {
                 return {
                     props: {
                         style: {
-                            width: '150px',
-                            textAlign: 'center',
+                            width: '60px',
+                            textAlign: 'left',
                             lineHeight: '20px',
                             padding: '2px',
                         },
@@ -258,7 +258,7 @@ export default (props: any) => {
                     props: {
                         style: {
                             width: '150px',
-                            textAlign: 'center',
+                            textAlign: 'left',
                             lineHeight: '20px',
                             padding: '2px',
                         },
@@ -277,7 +277,7 @@ export default (props: any) => {
                     props: {
                         style: {
                             width: '150px',
-                            textAlign: 'center',
+                            textAlign: 'left',
                             lineHeight: '20px',
                             padding: '2px',
                         },
@@ -287,23 +287,42 @@ export default (props: any) => {
             }
         },
         {
-            title: 'Metraje',
-            dataIndex: "ÁREA UTIL (m2)",
-            key: "ÁREA UTIL (m2)",
+            title: 'Coeficiente',
+            dataIndex: "TIPO DE AMBIENTE",
+            key: "TIPO DE AMBIENTE",
             //editable: true,
             render(text: any, record: any) {
-                console.log("r")
-                console.log(console.log(record))
                 return {
                     props: {
                         style: {
                             width: '150px',
-                            textAlign: 'center',
+                            textAlign: 'left',
                             lineHeight: '20px',
                             padding: '2px',
                         },
                     },
-                    children: <div>{numbro(record["AREA UTIL (m2)"]).format({mantissa: 2})}</div>,
+                    children: <div>{record["COEFICIENTE DE OCUPANTES"]}</div>,
+                }
+            }
+        },
+        {
+            title: 'Metraje',
+            dataIndex: "AREA-UTIL",
+            key: "AREA-UTIL",
+            //editable: true,
+
+
+            render(text: any, record: any) {
+                return {
+                    props: {
+                        style: {
+                            width: '150px',
+                            textAlign: 'left',
+                            lineHeight: '20px',
+                            padding: '2px',
+                        },
+                    },
+                    children: <div>{numbro(record["AREA-UTIL"]).format({mantissa: 2})}</div>,
                 }
             }
         },
@@ -316,7 +335,7 @@ export default (props: any) => {
                     props: {
                         style: {
                             width: '150px',
-                            textAlign: 'center',
+                            textAlign: 'left',
                             lineHeight: '20px',
                             padding: '2px',
                         },
