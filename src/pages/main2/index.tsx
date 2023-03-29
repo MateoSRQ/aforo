@@ -11,7 +11,8 @@ import React, {useContext, useState} from "react";
 import numbro from "numbro";
 import _data from './data.json'
 import _aforo from './aforo.json'
-import Aforo from "../aforo";
+import _etca from './etca.json'
+import Aforo from "../aforo2";
 import {InsertRowBelowOutlined} from "@ant-design/icons";
 import {Tabs} from 'antd';
 import type {TabsProps} from 'antd';
@@ -43,6 +44,21 @@ const columns: any = [
             )
         }
     },
+    // { title: 'Nombre', dataIndex: 'nombre', key: 'nombre' },
+    // { title: 'Address', dataIndex: 'address', key: 'address' },
+];
+
+const columns2: any = [
+    {
+        title: 'Sede', dataIndex: 'sede', key: 'sede', width: 350, render: (text: any, record: any) => {
+            return (
+                <div style={{fontWeight: 500, fontSize: '22px'}}>
+                    {record.sede}
+                </div>
+            )
+        }
+    }
+
     // { title: 'Nombre', dataIndex: 'nombre', key: 'nombre' },
     // { title: 'Address', dataIndex: 'address', key: 'address' },
 ];
@@ -142,7 +158,7 @@ const MasterTable = (props: any) => {
                             expandable={{
                                 //defaultExpandAllRows: true,
                                 expandedRowRender: (record) => {
-                                    return <Aforo data={_aforo}/>
+                                    return <Aforo data={_etca[record.sede]}/>
                                 }
                             }}
                             dataSource={props.data}
@@ -161,8 +177,6 @@ const MasterTable = (props: any) => {
                 )
             }
         ]
-    ;
-
     return (
         <div className={style.card}>
             <Tabs defaultActiveKey="1" items={items} style={{width: '100%', padding: '24px'}}/>
@@ -211,11 +225,6 @@ const SedeTable = (props: any) => {
 }
 
 const CarreraTable = (props: any) => {
-    //const [inicial, setInicial] = useState(props.inicial)
-    //const [crecimiento, setCrecimiento] = useState(props.crecimiento)
-    //const [semestre, setSemestre] = useState(props.semestre)
-    //const [asistencia, setAsistencia] = useState(props.asistencia)
-
     let matriz = calcularMatriz(props.ciclos, props.columnas, props.inicial, props.semestre, props.crecimiento, desercion);
     let columns = columnas(12, 80, 20);
 
@@ -545,7 +554,7 @@ const CarreraTable = (props: any) => {
             </div>
             <div className={style.card}>
                 <Table
-                    key={Math.random()}
+                    //key={Math.random()}
                     style={{width: 'calc(100% - 20px)', filter: 'grayscale(0.7)'}}
                     dataSource={matriz}
                     columns={columns}

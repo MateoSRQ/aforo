@@ -4,7 +4,7 @@ import App from './pages/app'
 import Aforo from './pages/aforo'
 import Principal from './pages/principal'
 import Tables from './pages/tables'
-import Main from './pages/main'
+import Main from './pages/main2'
 import '@fontsource/fira-sans'
 import './index.css'
 

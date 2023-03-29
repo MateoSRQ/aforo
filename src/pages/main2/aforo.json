@@ -1,0 +1,1370 @@
+[
+  {
+    "key": 1,
+    "nivel": "Sótano 1",
+    "ambiente": "Laboratorio de Mecánica de Fluidos e Hidráulica",
+    "tipo": "RNE A.040 CAP III ART 9",
+    "metraje": 150,
+    "aforo": 67,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 2,
+    "nivel": "Sótano 1",
+    "ambiente": "Archivo Central",
+    "tipo": "RNE A.050 SALUD CAP. II. ART 6",
+    "metraje": 16.21,
+    "aforo": 1,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 3,
+    "nivel": "Sótano 1",
+    "ambiente": "Oficina de Almacén",
+    "tipo": "RNE A.040 CAP III ART 9",
+    "metraje": 11.02,
+    "aforo": 1,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 4,
+    "nivel": "Sótano 1",
+    "ambiente": "Almacén 1",
+    "tipo": "RNE A.050 SALUD CAP. II. ART 6",
+    "metraje": 25.07,
+    "aforo": 1,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 5,
+    "nivel": "Sótano 1",
+    "ambiente": "Almacén 2",
+    "tipo": "RNE A.050 SALUD CAP. II. ART 6",
+    "metraje": 15.72,
+    "aforo": 1,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 6,
+    "nivel": "Sótano 1",
+    "ambiente": "Almacén 3",
+    "tipo": "RNE A.050 SALUD CAP. II. ART 6",
+    "metraje": 36.60,
+    "aforo": 1,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 7,
+    "nivel": "Sótano 1",
+    "ambiente": "Almacén 4",
+    "tipo": "RNE A.050 SALUD CAP. II. ART 6",
+    "metraje": 103.97,
+    "aforo": 3,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 8,
+    "nivel": "Sótano 1",
+    "ambiente": "Almacén 5",
+    "tipo": "RNE A.050 SALUD CAP. II. ART 6",
+    "metraje": 20.29,
+    "aforo": 1,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 9,
+    "nivel": "Sótano 1",
+    "ambiente": "Almacén 6",
+    "tipo": "RNE A.050 SALUD CAP. II. ART 6",
+    "metraje": 20.52,
+    "aforo": 1,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 10,
+    "nivel": "Sótano",
+    "ambiente": "Depósito 1",
+    "metraje": 36.65,
+    "tipo": "RNE A.050 SALUD CAP. II. ART 6",
+    "aforo": 1,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 11,
+    "nivel": "Sótano",
+    "ambiente": "Depósito 2",
+    "metraje": 15.12,
+    "tipo": "RNE A.050 SALUD CAP. II. ART 6",
+    "aforo": 1,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 12,
+    "nivel": "Nivel 1",
+    "ambiente": "Sala De Espera",
+    "metraje": 53.4,
+    "tipo": "RNE A.050 SALUD CAP. II. ART 6",
+    "aforo": 67,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 13,
+    "nivel": "Nivel 1",
+    "ambiente": "Call Center Fidelizacion (Compar.)",
+    "metraje": 32.77,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 33,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 14,
+    "nivel": "Nivel 1",
+    "ambiente": "Caseta de Seguridad 1",
+    "metraje": 4.1,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 1,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 15,
+    "nivel": "Nivel 1",
+    "ambiente": "Caseta de Seguridad 2",
+    "metraje": 4.34,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 1,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 16,
+    "nivel": "Nivel 1",
+    "ambiente": "Caja",
+    "metraje": 4.8,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 1,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 17,
+    "nivel": "Nivel 1",
+    "ambiente": "Fotocopia",
+    "metraje": 5.88,
+    "tipo": "RNE A.050 SALUD CAP. II. ART 6",
+    "aforo": 1,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 18,
+    "nivel": "Nivel 1",
+    "ambiente": "Jefaturas (Ofc. Compartida)",
+    "metraje": 15.65,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 2,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 19,
+    "nivel": "Nivel 1",
+    "ambiente": "Asistencia De T.I.",
+    "metraje": 4.87,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 1,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 20,
+    "nivel": "Nivel 1",
+    "ambiente": "Oficina 1",
+    "metraje": 7.64,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 1,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 21,
+    "nivel": "Nivel 1",
+    "ambiente": "Oficina 2",
+    "metraje": 7.36,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 1,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 22,
+    "nivel": "Nivel 1",
+    "ambiente": "Taller De Expresión Arquitectónica",
+    "metraje": 48.19,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 21,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 23,
+    "nivel": "Nivel 1",
+    "ambiente": "Taller De Topografía",
+    "metraje": 48.26,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 21,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 24,
+    "nivel": "Nivel 1",
+    "ambiente": "Aula 103",
+    "metraje": 35.39,
+    "tipo": "RM 834. EDIF.UNIVERS.ANR 2012 ART. 21.6",
+    "aforo": 29,
+    "activo": "Activo"
+  },
+  {
+    "key": 25,
+    "nivel": "Nivel 1",
+    "ambiente": "Aula 104",
+    "metraje": 34.98,
+    "tipo": "RM 834. EDIF.UNIVERS.ANR 2012 ART. 21.6",
+    "aforo": 29,
+    "activo": "Activo"
+  },
+  {
+    "key": 26,
+    "nivel": "Nivel 1",
+    "ambiente": "Aula 105",
+    "metraje": 32.98,
+    "tipo": "RM 834. EDIF.UNIVERS.ANR 2012 ART. 21.6",
+    "aforo": 27,
+    "activo": "Activo"
+  },
+  {
+    "key": 27,
+    "nivel": "Nivel 1",
+    "ambiente": "Laboratorio De Control",
+    "metraje": 47.37,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 21,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 28,
+    "nivel": "Nivel 1",
+    "ambiente": "Laboratorio De Telecomunicaciones",
+    "metraje": 42.94,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 19,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 29,
+    "nivel": "Nivel 1",
+    "ambiente": "Call Center",
+    "metraje": 26.5,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 27,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 30,
+    "nivel": "Nivel 1",
+    "ambiente": "Mesa De Partes (Ofc. Compartida)",
+    "metraje": 17.5,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 2,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 31,
+    "nivel": "Nivel 1",
+    "ambiente": "Recursos Humanos (Ofc. Compartida)",
+    "metraje": 45.64,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 5,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 32,
+    "nivel": "Nivel 1",
+    "ambiente": "Sala De Espera",
+    "metraje": 63.87,
+    "tipo": "RNE A.050 SALUD CAP. II. ART 6",
+    "aforo": 80,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 33,
+    "nivel": "Nivel 1",
+    "ambiente": "Vicerrectorado Académico",
+    "metraje": 52.97,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 6,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 34,
+    "nivel": "Nivel 1",
+    "ambiente": "Dirección de Calidad y Vinculación Internacional",
+    "tipo": "RNE A.040 CAP III ART 9",
+    "metraje": 19.95,
+    "aforo": 2,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 35,
+    "nivel": "Nivel 1",
+    "ambiente": "Planeamiento Y Desarrollo\n1",
+    "metraje": 15.6,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 2,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 36,
+    "nivel": "Nivel 1",
+    "ambiente": "Planeamiento Y Desarrollo\n2",
+    "metraje": 20.12,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 2,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 37,
+    "nivel": "Nivel 1",
+    "ambiente": "Dirección de Gestión Educativa",
+    "metraje": 32.05,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 3,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 38,
+    "nivel": "Nivel 1",
+    "ambiente": "Oficina 4",
+    "metraje": 15.14,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 2,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 39,
+    "nivel": "Nivel 1",
+    "ambiente": "Oficina 5",
+    "metraje": 15.09,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 2,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 40,
+    "nivel": "Nivel 1",
+    "ambiente": "Caja",
+    "metraje": 61.3,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 6,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 41,
+    "nivel": "Nivel 1",
+    "ambiente": "Oficina Cuentas Corrientes",
+    "metraje": 25.72,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 3,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 42,
+    "nivel": "Nivel 1",
+    "ambiente": "Oficina 6",
+    "metraje": 14.05,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 1,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 43,
+    "nivel": "Nivel 1",
+    "ambiente": "Tópico",
+    "metraje": 20.11,
+    "tipo": "RNE A.050 SALUD CAP. II. ART 6",
+    "aforo": 3,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 44,
+    "nivel": "Nivel 1",
+    "ambiente": "Laboratorio de Mecánica de Suelos y Pavimentos",
+    "metraje": 72.76,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 32,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 45,
+    "nivel": "Nivel 1",
+    "ambiente": "Oficina 7",
+    "metraje": 21.28,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 2,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 46,
+    "nivel": "Nivel 1",
+    "ambiente": "Vigilancia",
+    "metraje": 4.34,
+    "tipo": "RNE A.050 SALUD CAP. II. ART 6",
+    "aforo": 1,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 47,
+    "nivel": "Nivel 1",
+    "ambiente": "Oficina 8",
+    "metraje": 14.09,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 1,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 48,
+    "nivel": "Nivel 1",
+    "ambiente": "Hall De Espera",
+    "metraje": 14.47,
+    "tipo": "RNE A.050 SALUD CAP. II. ART 6",
+    "aforo": 18,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 49,
+    "nivel": "Nivel 1",
+    "ambiente": "Inserción Laboral",
+    "metraje": 19.3,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 2,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 50,
+    "nivel": "Nivel 1",
+    "ambiente": "Oficina de Aseguramiento de la Calidad",
+    "metraje": 26.5,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 3,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 51,
+    "nivel": "Nivel 1",
+    "ambiente": "Depósito de Limpieza 1",
+    "metraje": 4.09,
+    "tipo": "RNE A.050 SALUD CAP. II. ART 6",
+    "aforo": 1,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 52,
+    "nivel": "Nivel 1",
+    "ambiente": "Depósito de Limpieza 2",
+    "metraje": 8.66,
+    "tipo": "RNE A.050 SALUD CAP. II. ART 6",
+    "aforo": 1,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 53,
+    "nivel": "Nivel 1",
+    "ambiente": "Lactario",
+    "metraje": 17.43,
+    "tipo": "RNE A.050 SALUD CAP. II. ART 6",
+    "aforo": 3,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 54,
+    "nivel": "Nivel 1",
+    "ambiente": "Depósito 1",
+    "metraje": 2.1,
+    "tipo": "RNE A.050 SALUD CAP. II. ART 6",
+    "aforo": 1,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 55,
+    "nivel": "Nivel 1",
+    "ambiente": "Depósito 2",
+    "metraje": 1.11,
+    "tipo": "RNE A.050 SALUD CAP. II. ART 6",
+    "aforo": 1,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 56,
+    "nivel": "Nivel 1",
+    "ambiente": "Depósito 3",
+    "metraje": 14.94,
+    "tipo": "RNE A.050 SALUD CAP. II. ART 6",
+    "aforo": 1,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 57,
+    "nivel": "Nivel 1",
+    "ambiente": "Depósito de Residuos Sólidos",
+    "metraje": 25.97,
+    "tipo": "RNE A.050 SALUD CAP. II. ART 6",
+    "aforo": 1,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 58,
+    "nivel": "Nivel 1",
+    "ambiente": "Depósito 4",
+    "metraje": 2.58,
+    "tipo": "RNE A.050 SALUD CAP. II. ART 6",
+    "aforo": 1,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 59,
+    "nivel": "Nivel 1",
+    "ambiente": "Depósito 5",
+    "metraje": 4.2,
+    "tipo": "RNE A.050 SALUD CAP. II. ART 6",
+    "aforo": 1,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 60,
+    "nivel": "Nivel 1",
+    "ambiente": "Depósito 6",
+    "metraje": 4.25,
+    "tipo": "RNE A.050 SALUD CAP. II. ART 6",
+    "aforo": 1,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 61,
+    "nivel": "Nivel 1",
+    "ambiente": "Archivo",
+    "metraje": 7.93,
+    "tipo": "RNE A.050 SALUD CAP. II. ART 6",
+    "aforo": 1,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 62,
+    "nivel": "Nivel 1",
+    "ambiente": "Central de Teléfono",
+    "metraje": 4.25,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 1,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 63,
+    "nivel": "Nivel 2",
+    "ambiente": "Coordinación De Redes Y Telecomunicaciones",
+    "metraje": 24.3,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 3,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 64,
+    "nivel": "Nivel 2",
+    "ambiente": "Oficina T.L.2",
+    "metraje": 38.24,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 4,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 65,
+    "nivel": "Nivel 2",
+    "ambiente": "Oficina T.L.1",
+    "metraje": 21.48,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 2,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 66,
+    "nivel": "Nivel 2",
+    "ambiente": "Soporte Técnico",
+    "metraje": 9.26,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 1,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 67,
+    "nivel": "Nivel 2",
+    "ambiente": "Mesa De Ayuda",
+    "metraje": 12.3,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 1,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 68,
+    "nivel": "Nivel 2",
+    "ambiente": "Laboratorio Cómputo 1",
+    "metraje": 49.47,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 16,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 69,
+    "nivel": "Nivel 2",
+    "ambiente": "Aula 201",
+    "metraje": 39.1,
+    "tipo": "RM 834. EDIF.UNIVERS.ANR 2012 ART. 21.6",
+    "aforo": 33,
+    "activo": "Activo"
+  },
+  {
+    "key": 70,
+    "nivel": "Nivel 2",
+    "ambiente": "Aula 202",
+    "metraje": 38.83,
+    "tipo": "RM 834. EDIF.UNIVERS.ANR 2012 ART. 21.6",
+    "aforo": 32,
+    "activo": "Activo"
+  },
+  {
+    "key": 71,
+    "nivel": "Nivel 2",
+    "ambiente": "Aula 203",
+    "metraje": 48.52,
+    "tipo": "RM 834. EDIF.UNIVERS.ANR 2012 ART. 21.6",
+    "aforo": 40,
+    "activo": "Activo"
+  },
+  {
+    "key": 72,
+    "nivel": "Nivel 2",
+    "ambiente": "Laboratorio de Control de Procesos Industriales",
+    "metraje": 54.28,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 24,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 73,
+    "nivel": "Nivel 2",
+    "ambiente": "Aula 204",
+    "metraje": 33.16,
+    "tipo": "RM 834. EDIF.UNIVERS.ANR 2012 ART. 21.6",
+    "aforo": 28,
+    "activo": "Activo"
+  },
+  {
+    "key": 74,
+    "nivel": "Nivel 2",
+    "ambiente": "Aula 205",
+    "metraje": 41.13,
+    "tipo": "RM 834. EDIF.UNIVERS.ANR 2012 ART. 21.6",
+    "aforo": 34,
+    "activo": "Activo"
+  },
+  {
+    "key": 75,
+    "nivel": "Nivel 2",
+    "ambiente": "Oficina 1",
+    "metraje": 17.55,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 2,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 76,
+    "nivel": "Nivel 2",
+    "ambiente": "Sala De Docentes 1",
+    "metraje": 53.02,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 6,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 77,
+    "nivel": "Nivel 2",
+    "ambiente": "Sala de Docentes 2",
+    "metraje": 58.19,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 6,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 78,
+    "nivel": "Nivel 2",
+    "ambiente": "Jefatura Tesorería",
+    "metraje": 13.9,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 1,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 79,
+    "nivel": "Nivel 2",
+    "ambiente": "Oficina 2",
+    "metraje": 9.96,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 1,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 80,
+    "nivel": "Nivel 2",
+    "ambiente": "Dirección De Auditoria Interna",
+    "metraje": 22.75,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 2,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 81,
+    "nivel": "Nivel 2",
+    "ambiente": "Oficina 3",
+    "metraje": 12.39,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 1,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 82,
+    "nivel": "Nivel 2",
+    "ambiente": "V.P Finanzas",
+    "metraje": 16.08,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 2,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 83,
+    "nivel": "Nivel 2",
+    "ambiente": "Biblioteca",
+    "metraje": 108.47,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 54,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 84,
+    "nivel": "Nivel 2",
+    "ambiente": "Auditorio",
+    "tipo": "RNE A.040 CAP III ART 9",
+    "metraje": 155.99,
+    "aforo": 156,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 85,
+    "nivel": "Nivel 2",
+    "ambiente": "Cábina de Consola",
+    "metraje": 11.2,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 1,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 86,
+    "nivel": "Nivel 2",
+    "ambiente": "Presidencia",
+    "metraje": 19.26,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 2,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 87,
+    "nivel": "Nivel 2",
+    "ambiente": "Sala De Reunión 1",
+    "metraje": 12.75,
+    "tipo": "RM 834. EDIF.UNIVERS.ANR 2012 ART. 21.6",
+    "aforo": 9,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 88,
+    "nivel": "Nivel 2",
+    "ambiente": "Finanzas",
+    "metraje": 18.84,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 2,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 89,
+    "nivel": "Nivel 2",
+    "ambiente": "Sala De Reunión 2",
+    "metraje": 7.25,
+    "tipo": "RM 834. EDIF.UNIVERS.ANR 2012 ART. 21.6",
+    "aforo": 5,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 90,
+    "nivel": "Nivel 2",
+    "ambiente": "Sala De Reunión 3",
+    "metraje": 14.03,
+    "tipo": "RM 834. EDIF.UNIVERS.ANR 2012 ART. 21.6",
+    "aforo": 9,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 91,
+    "nivel": "Nivel 2",
+    "ambiente": "Oficina Rectorado 2",
+    "metraje": 28.34,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 3,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 92,
+    "nivel": "Nivel 2",
+    "ambiente": "Sala De Reuniones Rectorado",
+    "metraje": 17.22,
+    "tipo": "RM 834. EDIF.UNIVERS.ANR 2012 ART. 21.6",
+    "aforo": 11,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 93,
+    "nivel": "Nivel 2",
+    "ambiente": "Oficinas Rectorado 1",
+    "metraje": 25.22,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 3,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 94,
+    "nivel": "Nivel 2",
+    "ambiente": "Kitchenette",
+    "metraje": 7.42,
+    "tipo": "RNE - A.070 COMERCIO CAP.II. ART .7",
+    "aforo": 5,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 95,
+    "nivel": "Nivel 2",
+    "ambiente": "Depósito 1",
+    "metraje": 8.85,
+    "tipo": "RNE A.050 SALUD CAP. II. ART 6",
+    "aforo": 1,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 96,
+    "nivel": "Nivel 2",
+    "ambiente": "Depósito 2",
+    "metraje": 8.66,
+    "tipo": "RNE A.050 SALUD CAP. II. ART 6",
+    "aforo": 1,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 97,
+    "nivel": "Nivel 2",
+    "ambiente": "Depósito 3",
+    "metraje": 12.82,
+    "tipo": "RNE A.050 SALUD CAP. II. ART 6",
+    "aforo": 1,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 98,
+    "nivel": "Nivel 2",
+    "ambiente": "Data Center",
+    "metraje": 38.9,
+    "tipo": "RNE A.050 SALUD CAP. II. ART 6",
+    "aforo": 2,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 99,
+    "nivel": "Nivel 2",
+    "ambiente": "Depósito 4",
+    "metraje": 1.19,
+    "tipo": "RNE A.050 SALUD CAP. II. ART 6",
+    "aforo": 1,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 100,
+    "nivel": "Nivel 2",
+    "ambiente": "Depósito 5",
+    "metraje": 8.69,
+    "tipo": "RNE A.050 SALUD CAP. II. ART 6",
+    "aforo": 1,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 101,
+    "nivel": "Nivel 2",
+    "ambiente": "Depósito de Limpieza",
+    "metraje": 6.16,
+    "tipo": "RNE A.050 SALUD CAP. II. ART 6",
+    "aforo": 1,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 103,
+    "nivel": "Nivel 2",
+    "ambiente": "Depósito 6",
+    "metraje": 2.75,
+    "tipo": "RNE A.050 SALUD CAP. II. ART 6",
+    "aforo": 1,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 104,
+    "nivel": "Nivel 2",
+    "ambiente": "Depósito 7",
+    "metraje": 3.3,
+    "tipo": "RNE A.050 SALUD CAP. II. ART 6",
+    "aforo": 1,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 105,
+    "nivel": "Nivel 3",
+    "ambiente": "Laboratorio De Cómputo 2",
+    "metraje": 66.46,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 22,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 106,
+    "nivel": "Nivel 3",
+    "ambiente": "Laboratorio De Cómputo 3",
+    "metraje": 54.31,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 18,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 107,
+    "nivel": "Nivel 3",
+    "ambiente": "Aula 301",
+    "metraje": 51.62,
+    "tipo": "RM 834. EDIF.UNIVERS.ANR 2012 ART. 21.6",
+    "aforo": 43,
+    "activo": "Activo"
+  },
+  {
+    "key": 108,
+    "nivel": "Nivel 3",
+    "ambiente": "Oficina 1",
+    "metraje": 21,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 2,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 109,
+    "nivel": "Nivel 3",
+    "ambiente": "Oficina 2",
+    "metraje": 13.72,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 1,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 110,
+    "nivel": "Nivel 3",
+    "ambiente": "Decanato de Ingeniería y Arquitectura",
+    "metraje": 22.49,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 2,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 111,
+    "nivel": "Nivel 3",
+    "ambiente": "Laboratorio De Electrónica Avanzada",
+    "metraje": 45.82,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 20,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 112,
+    "nivel": "Nivel 3",
+    "ambiente": "Laboratorio de Redes y Telecomunicaciones",
+    "metraje": 46.28,
+    "tipo": "RM 834. EDIF.UNIVERS.ANR 2012 ART. 21.6",
+    "aforo": 21,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 113,
+    "nivel": "Nivel 3",
+    "ambiente": "Laboratorio De Cómputo 4",
+    "metraje": 37.59,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 13,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 114,
+    "nivel": "Nivel 3",
+    "ambiente": "Laboratorio De Cómputo 5",
+    "metraje": 36.74,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 12,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 115,
+    "nivel": "Nivel 3",
+    "ambiente": "Oficina 3",
+    "metraje": 22.49,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 2,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 116,
+    "nivel": "Nivel 3",
+    "ambiente": "Laboratorio De Física",
+    "metraje": 55.22,
+    "tipo": "RM 834. EDIF.UNIVERS.ANR 2012 ART. 21.6",
+    "aforo": 25,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 117,
+    "nivel": "Nivel 3",
+    "ambiente": "Aula 303",
+    "metraje": 38.64,
+    "tipo": "RM 834. EDIF.UNIVERS.ANR 2012 ART. 21.6",
+    "aforo": 32,
+    "activo": "Activo"
+  },
+  {
+    "key": 118,
+    "nivel": "Nivel 3",
+    "ambiente": "Aula 304",
+    "metraje": 38.58,
+    "tipo": "RM 834. EDIF.UNIVERS.ANR 2012 ART. 21.6",
+    "aforo": 32,
+    "activo": "Activo"
+  },
+  {
+    "key": 119,
+    "nivel": "Nivel 3",
+    "ambiente": "Laboratorio de Monitoreo Ambiental",
+    "metraje": 45.23,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 20,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 120,
+    "nivel": "Nivel 3",
+    "ambiente": "Taller de Arquitectura Sostenible",
+    "metraje": 35.53,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 16,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 121,
+    "nivel": "Nivel 3",
+    "ambiente": "Depósito 1",
+    "metraje": 2.75,
+    "tipo": "RNE A.050 SALUD CAP. II. ART 6",
+    "aforo": 1,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 122,
+    "nivel": "Nivel 3",
+    "ambiente": "Depósito 2",
+    "metraje": 3.3,
+    "tipo": "RNE A.050 SALUD CAP. II. ART 6",
+    "aforo": 1,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 123,
+    "nivel": "Nivel 3",
+    "ambiente": "Depósito tesorería 1",
+    "metraje": 13.81,
+    "tipo": "RNE A.050 SALUD CAP. II. ART 6",
+    "aforo": 1,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 124,
+    "nivel": "Nivel 3",
+    "ambiente": "Depósito tesorería 2",
+    "metraje": 10.61,
+    "tipo": "RNE A.050 SALUD CAP. II. ART 6",
+    "aforo": 1,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 125,
+    "nivel": "Nivel 4",
+    "ambiente": "Taller De Diseño Arquitectónico y Urbano",
+    "metraje": 55.56,
+    "tipo": "RM 834. EDIF.UNIVERS.ANR 2012 ART. 21.6",
+    "aforo": 25,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 126,
+    "nivel": "Nivel 4",
+    "ambiente": "Aula 402",
+    "metraje": 42.84,
+    "tipo": "RM 834. EDIF.UNIVERS.ANR 2012 ART. 21.6",
+    "aforo": 36,
+    "activo": "Activo"
+  },
+  {
+    "key": 127,
+    "nivel": "Nivel 4",
+    "ambiente": "Taller De Tecnologías Constructivas",
+    "metraje": 49.75,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 22,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 128,
+    "nivel": "Nivel 4",
+    "ambiente": "Coordinación Académica",
+    "metraje": 54.97,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 6,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 129,
+    "nivel": "Nivel 4",
+    "ambiente": "Sala De Directora FIA",
+    "metraje": 47.12,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 5,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 130,
+    "nivel": "Nivel 4",
+    "ambiente": "Laboratorio de Electrónica Basica",
+    "metraje": 40.32,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 18,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 131,
+    "nivel": "Nivel 4",
+    "ambiente": "Escuela Profesional De Ing. Civil",
+    "metraje": 29.51,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 3,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 132,
+    "nivel": "Nivel 4",
+    "ambiente": "Oficina 1",
+    "metraje": 48.3,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 5,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 133,
+    "nivel": "Nivel 4",
+    "ambiente": "Laboratorio Química, Biología y Microbiología",
+    "metraje": 55.21,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 25,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 134,
+    "nivel": "Nivel 4",
+    "ambiente": "Aula 405",
+    "metraje": 23.11,
+    "tipo": "RM 834. EDIF.UNIVERS.ANR 2012 ART. 21.6",
+    "aforo": 19,
+    "activo": "Activo"
+  },
+  {
+    "key": 135,
+    "nivel": "Nivel 4",
+    "ambiente": "Aula 406",
+    "metraje": 36.5,
+    "tipo": "RM 834. EDIF.UNIVERS.ANR 2012 ART. 21.6",
+    "aforo": 30,
+    "activo": "Activo"
+  },
+  {
+    "key": 136,
+    "nivel": "Nivel 4",
+    "ambiente": "Aula 408",
+    "metraje": 48.97,
+    "tipo": "RM 834. EDIF.UNIVERS.ANR 2012 ART. 21.6",
+    "aforo": 41,
+    "activo": "Activo"
+  },
+  {
+    "key": 137,
+    "nivel": "Nivel 4",
+    "ambiente": "Aula 409",
+    "metraje": 34,
+    "tipo": "RM 834. EDIF.UNIVERS.ANR 2012 ART. 21.6",
+    "aforo": 28,
+    "activo": "Activo"
+  },
+  {
+    "key": 138,
+    "nivel": "Nivel 4",
+    "ambiente": "Depósito 1",
+    "metraje": 4.97,
+    "tipo": "RNE A.050 SALUD CAP. II. ART 6",
+    "aforo": 1,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 139,
+    "nivel": "Nivel 4",
+    "ambiente": "Kitchenette",
+    "metraje": 7.37,
+    "tipo": "RNE - A.070 COMERCIO CAP.II. ART .7",
+    "aforo": 5,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 140,
+    "nivel": "Nivel 4",
+    "ambiente": "Depósito 2",
+    "metraje": 3.27,
+    "tipo": "RNE A.050 SALUD CAP. II. ART 6",
+    "aforo": 1,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 141,
+    "nivel": "Nivel 4",
+    "ambiente": "Depósito 3",
+    "metraje": 3.92,
+    "tipo": "RNE A.050 SALUD CAP. II. ART 6",
+    "aforo": 1,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 142,
+    "nivel": "Nivel 4",
+    "ambiente": "Depósito 4",
+    "metraje": 2.22,
+    "tipo": "RNE A.050 SALUD CAP. II. ART 6",
+    "aforo": 1,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 143,
+    "nivel": "Nivel 4",
+    "ambiente": "Depósito 5",
+    "metraje": 8.51,
+    "tipo": "RNE A.050 SALUD CAP. II. ART 6",
+    "aforo": 1,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 144,
+    "nivel": "Nivel 4",
+    "ambiente": "Depósito 6",
+    "metraje": 8.24,
+    "tipo": "RNE A.050 SALUD CAP. II. ART 6",
+    "aforo": 1,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 145,
+    "nivel": "Nivel 4",
+    "ambiente": "Depósito 7",
+    "metraje": 2.33,
+    "tipo": "RNE A.050 SALUD CAP. II. ART 6",
+    "aforo": 1,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 146,
+    "nivel": "Nivel 5",
+    "ambiente": "Laboratorio De Cómputo 6",
+    "metraje": 52.68,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 18,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 147,
+    "nivel": "Nivel 5",
+    "ambiente": "Oficina de Legal",
+    "metraje": 49.4,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 5,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 148,
+    "nivel": "Nivel 5",
+    "ambiente": "Oficina de Logística",
+    "metraje": 33,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 3,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 149,
+    "nivel": "Nivel 5",
+    "ambiente": "Comedor",
+    "metraje": 92.32,
+    "tipo": "RNE - A.070 COMERCIO CAP.II. ART .7",
+    "aforo": 62,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 150,
+    "nivel": "Nivel 5",
+    "ambiente": "Oficina 1",
+    "metraje": 8.95,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 1,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 151,
+    "nivel": "Nivel 5",
+    "ambiente": "Oficina 2",
+    "metraje": 8.29,
+    "tipo": "RNE A.040 CAP III ART 9",
+    "aforo": 1,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 152,
+    "nivel": "Nivel 5",
+    "ambiente": "Archivo",
+    "metraje": 7.76,
+    "tipo": "RNE A.050 SALUD CAP. II. ART 6",
+    "aforo": 1,
+    "activo": "Inactivo"
+  },
+  {
+    "key": 153,
+    "nivel": "Nivel 5",
+    "ambiente": "Depósito 1",
+    "metraje": 8.59,
+    "tipo": "RNE A.050 SALUD CAP. II. ART 6",
+    "aforo": 1,
+    "activo": "Inactivo"
+  }
+]
